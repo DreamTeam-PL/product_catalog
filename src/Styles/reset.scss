@@ -1,0 +1,58 @@
+/* Reset CSS */
+html, body, div, h1, h2, h3, p, ul, ol, li, a, button, input, select, textarea, img, object, table {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+ul, ol {
+  padding-left: 40px;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+img, object {
+  display: block;
+  border: 0;
+}
+
+a, button, input, select, textarea {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+input, select, textarea {
+  font-size: 100%;
+  font-family: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

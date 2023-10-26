@@ -1,0 +1,14 @@
+.phone-info {
+  &-title {
+    font-family: 'Mont', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 41px;
+    letter-spacing: -0.32px;
+  }
+
+  &-container {
+    display: flex;
+  }
+}

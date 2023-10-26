@@ -18,3 +18,11 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
+
+// FONTS
+
+@font-face {
+  font-family: 'Mont';
+  src: url('../Assets/Fonts/Mont/Mont-Heavy.ttf') format('woff');
+  font-weight: 800;
+}

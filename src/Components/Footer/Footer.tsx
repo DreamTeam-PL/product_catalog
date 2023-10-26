@@ -3,26 +3,44 @@ import './footer.scss';
 
 export const Footer = () => {
     return (
-        <footer className="footer">
-            <img
-                className="footer__logo"
-                alt="Logo - footer"
-                src={require('./Logo.png')}
-            ></img>
-            <div className="menu">
-                <span className="menu-item">GITHUB</span>
-                <span className="menu-item">CONTACTS</span>
-                <span className="menu-item">RIGHTS</span>
-            </div>
-            <div className="back-to-top-container">
-                <span className="back-to-top">Back to top</span>
+        <>
+            <div className="footer-line"></div>
+
+            <footer className="footer">
                 <img
-                    className="arrow"
-                    alt="Back to top"
-                    src={require('./OK.png')}
+                    className="footer__logo"
+                    alt="Logo - footer"
+                    src={require('./Logo.png')}
                 ></img>
-            </div>
-        </footer>
+                <div className="menu">
+
+                    <a className="footer-link">GITHUB</a>
+                    <a className="footer-link">CONTACTS</a>
+                    <a className="footer-link">RIGHTS</a>
+
+                </div>
+                <div className="footer__back-to-top back-to-top">
+
+                    <span className="back-to-top__txt">
+                        Back to top
+                    </span>
+
+                    <div className="back-to-top__arrow-button arrow-button">
+                        <img
+                            className="arrow-button--circle"
+                            alt="Back to top"
+                            src={require('./rectangle.png')}
+                        ></img>
+                        <img
+                            className="arrow-button-circle__chevron--up"
+                            alt="Back to top"
+                            src={require('./chevron.png')}
+                        ></img>
+                    </div>
+                    
+                </div>
+            </footer>
+        </>
     );
 };
 

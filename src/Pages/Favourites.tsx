@@ -1,0 +1,1 @@
+export const Favourites = () => <p>fav</p>;

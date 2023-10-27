@@ -1,0 +1,46 @@
+.category {
+  display: flex;
+  flex-direction: column;
+  color: #0F0F11;
+  width: 368px;
+  height: 443px;
+
+  &__img {
+    object-position: 40px;
+    width: 386px;
+    height: 457px;
+  }
+  &__img-background {
+    background-color: #6D6474;
+    width: 368px;
+    height: 368px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+  &__title {
+    font-family: Mont;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 4px;
+  }
+  &__count {
+    color: #89939A;
+    font-family: Mont;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0;
+  }
+
+  &__link {
+    all: unset;
+    cursor: pointer;
+  }
+}

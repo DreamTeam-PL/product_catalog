@@ -1,0 +1,50 @@
+$gray-primary: #0F0F11;
+
+.landing { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    &__title {   
+        display: inline;
+        box-sizing: border-box; 
+        width: 100%;   
+        color: $gray-primary;
+        font-family: 'Mont';
+        font-size: 32px; 
+        font-weight: 800;
+        line-height: 41px; /* 128.125% */
+        letter-spacing: -0.32px;
+        padding: 24px 16px; 
+
+        @media (min-width: 640px) { 
+            font-size: 48px;  
+            line-height: 56px; /* 116.667% */
+            letter-spacing: -0.48px;
+    
+            padding: 32px 24px; 
+        }
+
+        @media (min-width: 1200px) { 
+             
+        padding: 56px 152px; 
+    
+        }
+    } 
+}
+
+.main { 
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.test {
+    background-color: white;
+    border: 1px solid white;
+
+    &:last-child {
+        margin-bottom: 80px;
+    }
+}

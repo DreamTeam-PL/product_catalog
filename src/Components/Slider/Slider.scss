@@ -1,0 +1,89 @@
+.slider {
+    display: flex;
+    align-items: stretch;
+    justify-content: center; 
+    gap: 19px;  
+    margin-bottom: 28px; 
+    padding: 0;
+
+    @media (min-width: 640px) {
+        padding: 0 24px;
+    }
+
+    @media (min-width: 1200px) {
+        padding: 0 32px;
+    }
+
+    @media (min-width: 1201px) {
+        padding: 0 152px;
+    }
+
+    &__image { 
+        width: 100%;
+        max-width: 1040px;
+        max-height: 400px;
+        
+        @media (max-width: 639px) {
+            max-height: 639px;
+        }
+
+        @media (min-width: 640px) {
+                
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+      }
+
+    &__main {
+        position: relative;
+        
+        &::after {
+            content: url('dot1.svg');
+            position: absolute; 
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @for $i from 1 through 3 {
+            &--active-#{$i} {
+              &::after {
+                content: url('dot#{$i}.svg');
+              }
+            }
+          }
+    }
+
+    &__button {     
+        border: 1px solid #B4BDC3; 
+        background-color: #FFF;  
+        cursor: pointer;
+        width: 32px;
+        border-radius: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &--prev { 
+            &::after {
+              content: url('prev.svg');
+              width: 16px; 
+            }
+          }
+    
+          &--next { 
+            &::after {
+              content: url('next.svg');
+              width: 16px; 
+            }
+          }
+
+        @media(max-width: 639px) {
+            display: none;
+        } 
+
+      }
+}

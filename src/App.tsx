@@ -6,6 +6,7 @@ import { Footer } from './Components/Footer/Footer';
 
 export const App: React.FC = () => {
   return (<>  
+    <Header />
     <AppRouter />
     </>);
 };

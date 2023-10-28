@@ -1,0 +1,116 @@
+.button { 
+    color: #FFF;
+    background-color: #FFF; 
+    text-align: center; 
+    font-family: 'Mont';
+    cursor: pointer;
+    font-size: 14px;   
+    user-select: none;
+    
+    &--iconText {
+        color: rgba(0,0,0,1);
+        display: flex;
+        align-items: center;
+        gap: 4px
+    }
+
+    &--icon { 
+        width: 16px;
+        height: 16px;
+        
+        &-back { 
+            &::before {
+                content: url('./back.svg');   
+            }
+        }
+
+        &-remove { 
+            &::before {
+                content: url('./remove.svg');   
+            }
+
+            &:hover {
+                &::before {
+                    content: url('./remove-hover.svg');   
+                } 
+            }
+        }
+
+        &-decrease {
+            &:not(:disabled) {
+                &::before {
+                    content: url('./decrease.svg');   
+                }
+            }
+
+            &:disabled {
+                &::before {
+                    content: url('./decrease-disabled.svg');  
+                }
+            }
+        }
+
+        &-increase {
+            &:not(:disabled) {
+                &::before {
+                    content: url('./increase.svg');   
+                }
+            }
+
+        &:disabled {
+            &::before {
+                content: url('./increase-disabled.svg');  
+            }
+        }
+    }
+}
+
+    &--color { 
+        border-radius: 48px;
+        min-width: 176px;
+        width: 100%;
+        height: 40px; 
+        background-color: rgba(66, 25, 208, 1);
+        transition: all 0.3s;
+        
+        &:hover {
+            box-shadow: 0px 3px 13px 0px rgba(23, 32, 49, 0.40);
+        }
+    
+        &:active {
+            background-color: transparent; 
+            box-shadow:none;
+            font-family: 'Mont';
+            font-weight: 600px;
+            background-color: rgba(66, 25, 208, 0);
+            border: 1px solid rgba(226, 230, 233, 1);   
+            color: rgba(66, 25, 208, 1);
+        }
+    }
+
+    &--circle {  
+        width: 32px;
+        height: 32px;
+        border-radius: 48px;  
+        padding: 8px;
+        border: 1px solid #B4BDC3;
+        display: block;
+        padding: 8px;
+    
+        &:not(:disabled):hover {
+            border: 1px solid rgb(15, 15, 17);
+        }
+
+        &:has(.selected) {
+            background-color: #0F0F11;
+            color: #FFF;
+        }
+
+        &:disabled {
+            border: 1px solid #E2E6E9;
+        }
+    }      
+}
+
+
+ 

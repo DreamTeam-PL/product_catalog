@@ -1,0 +1,44 @@
+@import "../../Styles/mixins.scss";
+
+.page-not-found {
+  font-family: Mont;
+  font-style: normal;
+  font-weight: 800;
+  margin: 0 auto;
+  width: 1136px;
+  padding-top: 56px;
+
+  @include for-tablet {
+    width: 592px;
+    padding-top: 32px;
+  }
+
+  @include for-phone {
+    width: 288px;
+    padding-top: 24px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -0.48px;
+    padding-bottom: 4px;
+
+    @include for-phone {
+      font-size: 32px;
+      line-height: 41px;
+      letter-spacing: -0.32px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+  }
+
+  &__link {
+    display: inline;
+  }
+}

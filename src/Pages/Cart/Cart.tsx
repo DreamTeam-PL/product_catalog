@@ -50,7 +50,7 @@ export const Cart = () => {
             <section className='cart__checkout'>
                 <h2 className='cart__checkout-total'>{totalCost}</h2>
                 <p className='cart__checkout-count'>Total for {totalItems} items</p>
-                <line className='cart__checkout-line'/>
+                <div className='cart__checkout-line'/>
                 <Button 
                     type="color"
                     value="Checkout"

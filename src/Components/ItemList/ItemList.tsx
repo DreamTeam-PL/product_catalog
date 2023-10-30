@@ -15,6 +15,7 @@ export const ItemList:React.FC<ItemListProps> = ({ items, controller }) => {
 
     return (<section className='cart__items item-list'>
         {items.map(item => (<Item 
+            key={item.id}
             id={item.id}
             name={item.name}
             quantity={item.quantity}

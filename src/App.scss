@@ -1,0 +1,22 @@
+@import url('https://fonts.cdnfonts.com/css/mont');
+
+$header-height: 64px;
+$footer-height: 50px;
+
+// .header {
+//     display: block;
+//     width: 100%;
+//     height: $header-height;
+//     background-color: pink;
+// }
+
+.content {
+    min-height: calc(100vh - ($header-height + $footer-height));
+}
+
+.footer {
+    width: 100%;
+    height: $footer-height;
+    background-color: bisque;
+}
+ 

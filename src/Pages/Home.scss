@@ -1,0 +1,53 @@
+$gray-primary: #0F0F11;
+
+.landing { 
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: start;
+
+    &__title { 
+        color: $gray-primary;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 56px;
+        letter-spacing: -0.48px;
+        margin: 56px 152px;
+        font-family: Mont;
+
+    } 
+
+    &__sub-title {
+      color: $gray-primary;
+      font-weight: 800;
+      font-size: 32px;
+      font-style: normal;
+      line-height: 41px;
+      letter-spacing: -0.32px;
+      margin: 0;
+      font-family: Mont;
+
+      @media (max-width: 639px) {
+        & {
+          font-size: 22px;
+          line-height: 140%;
+        }
+      }
+    }
+}
+
+.main { 
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.test {
+    background-color: white;
+    border: 1px solid white;
+
+    &:last-child {
+        margin-bottom: 80px;
+    }
+}

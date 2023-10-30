@@ -1,0 +1,155 @@
+.category {
+  display: flex;
+  flex-direction: column;
+  color: #0F0F11;
+  width: 368px;
+  height: 443px;
+
+  @media (max-width: 1199px) {
+    & {
+      width: 187px;
+      height: 262px;
+    }
+  }
+
+  @media (max-width: 639px) {
+    & {
+      width: 288px;
+      height: 363px;
+    }
+  }
+
+  &__img {
+    background-repeat: cover;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    &--phones {
+      background-image: url("./images/categoty-phones-desktop.png");
+      width: 319px;
+      height: 328px;
+
+      @media (max-width: 1199px) {
+        & {
+          background-image: url("./images/categoty-phones-tablet.png");
+          width: 163px;
+          height: 167px;
+        }
+      }
+    
+      @media (max-width: 639px) {
+        & {
+          background-image: url("./images/categoty-phones-mobile.png");
+          width: 250px;
+          height: 257px;
+        }
+      }
+    }
+
+    &--tablets {
+      background-image: url("./images/categoty-tablets-desktop.png");
+      width: 346px;
+      height: 348px;
+
+      @media (max-width: 1199px) {
+        & {
+          background-image: url("./images/categoty-tablets-tablet.png");
+          width: 176px;
+          height: 177px;
+        }
+      }
+    
+      @media (max-width: 639px) {
+        & {
+          background-image: url("./images/categoty-tablets-mobile.png");
+          width: 271px;
+          height: 273px;
+        }
+      }
+    }
+
+    &--accessories {
+      background-image: url("./images/categoty-accessories-desktop.png");
+      width: 368px;
+      height: 368px;
+
+      @media (max-width: 1199px) {
+        & {
+          background-image: url("./images/categoty-accessories-tablet.png");
+          width: 187px;
+          height: 187px;
+        }
+      }
+    
+      @media (max-width: 639px) {
+        & {
+          background-image: url("./images/categoty-accessories-mobile.png");
+          width: 288px;
+          height: 288px;
+        }
+      }
+    }
+  }
+
+  &__background {
+    position: relative;
+    width: 368px;
+    height: 368px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    overflow: hidden;
+
+    @media (max-width: 1199px) {
+      & {
+        width: 187px;
+        height: 187px;
+      }
+    }
+
+    @media (max-width: 639px) {
+      & {
+        width: 288px;
+        height: 288px;
+      }
+    }
+
+    &--phones {
+      background-color: #6D6474;
+    }
+
+    &--tablets {
+      background-color: #8D8D92;
+    }
+
+    &--accessories {
+      background-color: #973D5F;
+    }
+  }
+
+  &__title {
+    font-family: Mont;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 4px;
+  }
+
+  &__count {
+    color: #89939A;
+    font-family: Mont;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0;
+  }
+
+  &__link {
+    all: unset;
+    cursor: pointer;
+  }
+}

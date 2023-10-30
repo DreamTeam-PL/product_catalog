@@ -1,14 +1,17 @@
 
 import React from 'react'
-import { Header } from './Components/Header/Header'
-import { Body } from './Components/Body/Body'
+import { Header } from './Components/Header/Header' 
 import { Footer } from './Components/Footer/Footer'
+import { AppRouter } from './Components/AppRouter'
+import './App.scss';
 
 export const App: React.FC = () => {
   return (
     <div className='productCatalog'>
       <Header />
-      <Body />
+      <section className='content'>
+        <AppRouter />
+      </section>
       <Footer />
     </div>
   )

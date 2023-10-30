@@ -1,3 +1,4 @@
+import { Categories } from "../Components/Categories/Categories";
 import { Slider } from "../Components/Slider/Slider";
 import { Cards } from "../Components/Cards/Cards";
 
@@ -8,7 +9,7 @@ export const Home:React.FC = () => (<section className="content landing">
     <main className="main">
         <Slider />
         <Cards title="Brand new models" />
-        <div className='test'>Kolejne</div>
+        <Categories />
         <Cards title="Hot prices" />
     </main>
 </section>) 

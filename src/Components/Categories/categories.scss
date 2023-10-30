@@ -1,0 +1,31 @@
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 1136px;
+  margin: 0 auto;
+
+  @media (max-width: 1199px) {
+    & {
+      width: 592px;
+    }
+  }
+
+  @media (max-width: 639px) {
+    & {
+      width: 288px;
+    }
+  }
+
+  &__blocks {
+    display: flex;
+    column-gap: 16px;
+
+    @media (max-width: 639px) {
+      & {
+        flex-direction: column;
+        row-gap: 24px;
+      }
+    }
+  }
+}

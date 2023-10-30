@@ -1,16 +1,37 @@
 import React from 'react'
 import './category.scss'
+import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 
-export const Category = () => {
+type CategoryProps = {
+  title: string;
+  productType: string
+}
+
+export const Category: React.FC<CategoryProps> = ({ 
+  title,
+  productType
+ }) => {
   return (
     <div className='category'>
-      <div className='category__img-background'>
-        <img src={require('./category-phones.png')} alt='' className='category__img'></img>
+      <div className={classNames('category__background', {
+            'category__background--phones': productType === 'phones',
+            'category__background--tablets': productType === 'tablets',
+            'category__background--accessories': productType === 'accessories',
+          }) }>
+        <div 
+          className={classNames('category__img', {
+            'category__img--phones': productType === 'phones',
+            'category__img--tablets': productType === 'tablets',
+            'category__img--accessories': productType === 'accessories',
+          }) }
+        >
+        </div>
       </div>
-      <a href='#' className='category__link'>
-        <p className='category__title'>Mobile phones</p>
-      </a>
-      <p className='category__count'>95 models</p>
+      <Link to={`category/${productType}`} className='category__link'>
+        <p className='category__title'>{title}</p>
+      </Link>
+      <p className='category__count'>0 models</p>
     </div>
   )
 }

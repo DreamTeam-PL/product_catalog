@@ -1,1 +1,0 @@
-export const Catalog = () => <p>catalog</p>;

@@ -47,8 +47,7 @@ $gray-elements: #E2E6E9;
     &__quantity {  
         display: grid;
         grid-template-columns: 30px 30px 30px auto;
-        place-items: center; 
-
+        place-items: center;  
         @media (max-width: 639px) {
             width: 100%;
         }
@@ -69,8 +68,8 @@ $gray-elements: #E2E6E9;
         font-size: 22px; 
         font-weight: 700;
         line-height: 30.8px;
-        margin: 0;
-
+        margin: 0; 
+        justify-self: flex-end;
         &::before {
             content: '$';
         }

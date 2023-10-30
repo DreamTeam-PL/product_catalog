@@ -14,3 +14,19 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
+
+//*** FONTS ***
+
+// *MONT*
+
+@font-face {
+  font-family: 'Mont';
+  src: url('../Assets/Fonts/Mont/Mont-Heavy.ttf') format('woff');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Mont';
+  src: url('../Assets/Fonts/Mont/Mont-SemiBold.ttf') format('woff');
+  font-weight: 800;
+}

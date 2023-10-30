@@ -1,18 +1,13 @@
 .footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
+    align-items: center; 
     width: 100%;
     border-top: 1px solid hsl(205.71, 13.73%, 90%);
     padding: 32px 0;
     background-color: white;
     font-family: Mont, Arial, Helvetica, sans-serif;
-    font-weight: 800;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    font-weight: 800;  
 
     &-wrapper {
         display: flex;

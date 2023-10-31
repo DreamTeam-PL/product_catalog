@@ -1,4 +1,16 @@
 .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  border-top: 1px solid hsl(205.71, 13.73%, 90%);
+  padding: 32px 0;
+  background-color: white;
+  font-family: Mont, Arial, Helvetica, sans-serif;
+  font-weight: 800;
+
+  &-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center; 
@@ -15,81 +27,80 @@
         align-items: center;
     }
 
-    &__logo {
-        width: 90px;
-        height: 32px;
-    }
+  &__logo {
+    width: 90px;
+    height: 32px;
+  }
 
-    &__back-to-top {
-        font-size: 12px;
-        color: #89939A;
-        cursor: pointer;
-    }
+  &__back-to-top {
+    font-size: 12px;
+    color: #89939a;
+    cursor: pointer;
+  }
 }
 
 .brand-name {
-    font-size: 24px;
-    font-weight: bold;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .menu {
-    display: flex;
-    width: 380px;
-    justify-content: space-between;
-    font-size: 12px;
-    gap: 20px;
+  display: flex;
+  width: 380px;
+  justify-content: space-between;
+  font-size: 12px;
+  gap: 20px;
 }
 
 .footer-link {
-    cursor: pointer;
-    text-decoration: none;
-    text-transform: capitalize;
-    color: #89939A;
-    font-size: 12px;
-    font-weight: 800;
-    line-height: 11px;
-    letter-spacing: 0.04em;
-    text-align: left;
-
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #89939a;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 11px;
+  letter-spacing: 0.04em;
+  text-align: left;
 }
 
 .footer__back-to-top {
-    display: flex;
-    gap: 16px;
-    align-items: center;
+  display: flex;
+  gap: 16px;
+  align-items: center;
 }
 
 .arrow-button-circle {
-    border-radius: 50%;
-    width: 32px;
-    clip-path: circle(50% at 50% 50%);
+  border-radius: 50%;
+  width: 32px;
+  clip-path: circle(50% at 50% 50%);
 }
 
 .arrow-button-circle__chevron--up {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease-in-out;
 }
 
 .chevron-hover {
-    transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .arrow-button-circle__chevron--up:hover {
-    transform: translate3d(-50%, -15px, 0);
+  transform: translate3d(-50%, -15px, 0);
 }
 
 .back-to-top__arrow-button {
-    position: relative;
+  position: relative;
 }
 
 .back-to-top__txt {
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 15px;
-    letter-spacing: 0em;
-    text-align: right;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: right;
 }

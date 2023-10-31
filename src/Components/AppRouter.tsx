@@ -5,6 +5,7 @@ import { Catalog } from '../Pages/Catalog'
 import { Product } from '../Pages/Product/Product' 
 import { Favourites } from '../Pages/Favourites'
 import { Cart } from '../Pages/Cart/Cart'
+import { NotFoundPage } from './NotFoundPage/NotFoundPage';
 
 export const AppRouter: React.FC = () => {
   return (
@@ -19,6 +20,8 @@ export const AppRouter: React.FC = () => {
       </Route>
       <Route path='/favourites' element={<Favourites />} />
       <Route path='/cart' element={<Cart />} />
+      <Route path='/page-not-found' element={<NotFoundPage />} />
+      <Route path='*' element={<Navigate to={'/page-not-found'} replace={true}/>} />
     </Routes>
   )
 }

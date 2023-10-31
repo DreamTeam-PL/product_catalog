@@ -1,19 +1,44 @@
 {
   "files": {
-    "main.css": "/product_catalog/static/css/main.993f4861.css",
-    "main.js": "/product_catalog/static/js/main.92565e52.js",
+    "main.css": "/product_catalog/static/css/main.dcf216b4.css",
+    "main.js": "/product_catalog/static/js/main.49d7833d.js",
+    "static/media/image_big.png": "/product_catalog/static/media/image_big.bddd5e1341b58cc65bfe.png",
+    "static/media/image_small.png": "/product_catalog/static/media/image_small.c0578933cc6114902d49.png",
+    "static/media/prodbig.png": "/product_catalog/static/media/prodbig.30c6803a13aa171da477.png",
+    "static/media/categoty-accessories-desktop.png": "/product_catalog/static/media/categoty-accessories-desktop.60b91a0862c73bd047a7.png",
+    "static/media/categoty-tablets-desktop.png": "/product_catalog/static/media/categoty-tablets-desktop.66e8df0a8f84d623b90f.png",
     "static/media/Mont-Heavy.ttf": "/product_catalog/static/media/Mont-Heavy.4f630ce585e17a2df049.ttf",
     "static/media/Mont-Bold.ttf": "/product_catalog/static/media/Mont-Bold.55f2f911d04f1bbf1328.ttf",
     "static/media/Mont-Black.ttf": "/product_catalog/static/media/Mont-Black.b0fd12fb1326502dab89.ttf",
     "static/media/Mont-Light.ttf": "/product_catalog/static/media/Mont-Light.56eb23c141b5df3fdd5f.ttf",
     "static/media/Mont-Regular.ttf": "/product_catalog/static/media/Mont-Regular.48fedf56dfaee955e6a2.ttf",
     "static/media/Mont-SemiBold.ttf": "/product_catalog/static/media/Mont-SemiBold.e6aa7cc9a3c63bed306e.ttf",
+    "static/media/categoty-phones-desktop.png": "/product_catalog/static/media/categoty-phones-desktop.4e23be913a309433b298.png",
+    "static/media/categoty-accessories-mobile.png": "/product_catalog/static/media/categoty-accessories-mobile.f5884db23f548d3c74a7.png",
+    "static/media/categoty-tablets-mobile.png": "/product_catalog/static/media/categoty-tablets-mobile.311a8c38720d774f773f.png",
+    "static/media/categoty-phones-mobile.png": "/product_catalog/static/media/categoty-phones-mobile.514544eb52fd6205dc5b.png",
+    "static/media/image2.png": "/product_catalog/static/media/image2.1dccc2ab785b503eb313.png",
+    "static/media/categoty-accessories-tablet.png": "/product_catalog/static/media/categoty-accessories-tablet.11bca5066bbac6dcd7a7.png",
+    "static/media/categoty-tablets-tablet.png": "/product_catalog/static/media/categoty-tablets-tablet.1a5eba467c571611e889.png",
+    "static/media/categoty-phones-tablet.png": "/product_catalog/static/media/categoty-phones-tablet.0bc03ecd67ae0a858227.png",
     "index.html": "/product_catalog/index.html",
-    "main.993f4861.css.map": "/product_catalog/static/css/main.993f4861.css.map",
-    "main.92565e52.js.map": "/product_catalog/static/js/main.92565e52.js.map"
+    "static/media/remove-hover.svg": "/product_catalog/static/media/remove-hover.c7b6a3f74ff13ed2129c.svg",
+    "static/media/remove.svg": "/product_catalog/static/media/remove.b342d30fa126833932c1.svg",
+    "static/media/increase-disabled.svg": "/product_catalog/static/media/increase-disabled.b90507cc54e71fa7d2f8.svg",
+    "static/media/increase.svg": "/product_catalog/static/media/increase.8db10eb1139a0bef140b.svg",
+    "static/media/back.svg": "/product_catalog/static/media/back.bbd3080db70674c34ac3.svg",
+    "static/media/next.svg": "/product_catalog/static/media/next.93424fec5099ebe0f382.svg",
+    "static/media/prev.svg": "/product_catalog/static/media/prev.c5945381f82648ec5bef.svg",
+    "static/media/decrease.svg": "/product_catalog/static/media/decrease.09803beda07823935ece.svg",
+    "static/media/decrease-disabled.svg": "/product_catalog/static/media/decrease-disabled.e050a51410d774622381.svg",
+    "static/media/dot1.svg": "/product_catalog/static/media/dot1.32548cff5986956ca7e0.svg",
+    "static/media/dot2.svg": "/product_catalog/static/media/dot2.c07c104a385c55689319.svg",
+    "static/media/dot3.svg": "/product_catalog/static/media/dot3.a5bf26cbe46dff562b29.svg",
+    "main.dcf216b4.css.map": "/product_catalog/static/css/main.dcf216b4.css.map",
+    "main.49d7833d.js.map": "/product_catalog/static/js/main.49d7833d.js.map"
   },
   "entrypoints": [
-    "static/css/main.993f4861.css",
-    "static/js/main.92565e52.js"
+    "static/css/main.dcf216b4.css",
+    "static/js/main.49d7833d.js"
   ]
 }

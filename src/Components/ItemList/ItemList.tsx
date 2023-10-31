@@ -1,17 +1,14 @@
 import './ItemList.scss';
 import { Item } from './Item';
 import { CartItem } from './types';
+import { useStorageContext } from '../../Context/StorageContext';
 
 type ItemListProps = {
     items: CartItem[];
-    controller: {
-        increase: (id: number) => void;
-        decrease: (id: number) => void;
-        remove: (id: number) => void;
-    }
 }
 
-export const ItemList:React.FC<ItemListProps> = ({ items, controller }) => {
+export const ItemList:React.FC<ItemListProps> = ({ items }) => {
+    const { cart } = useStorageContext();
 
     return (<section className='cart__items item-list'>
         {items.map(item => (<Item 
@@ -21,9 +18,9 @@ export const ItemList:React.FC<ItemListProps> = ({ items, controller }) => {
             quantity={item.quantity}
             price={item.price}
             img=""
-            increase={() => controller.increase(item.id)}
-            decrease={() => controller.decrease(item.id)}
-            remove={() => controller.remove(item.id)}
+            increase={() => cart.increase(item.id)}
+            decrease={() => cart.decrease(item.id)}
+            remove={() => cart.remove(item.id)}
         />))}
         
     </section>);

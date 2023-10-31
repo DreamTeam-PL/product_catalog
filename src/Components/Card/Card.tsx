@@ -1,20 +1,29 @@
 import React from 'react';
-import './card.scss';
+import './card.scss'; 
+import { CartItem } from '../ItemList/types';
+import { useStorageContext } from '../../Context/StorageContext';
 
-export const Card: React.FC = () => {
+
+type Props = {
+  item: CartItem;
+}
+
+export const Card: React.FC<Props> = ({ item }) => {
+  const { cart } = useStorageContext(); 
+
   return (
     <div className='card'>
       <div className='card__img'>
         <img
           className='img'
           src={require('./image2.png')}
-          alt="Apple iPhone 14 Pro 128GB Silver (MQ023)" />
+          alt={item.name} />
       </div>
       <div className="card__title">
-        <p>Apple iPhone 14 Pro 128GB Silver (MQ023)</p>
+        <p>{item.name}</p>
       </div>
       <div className="card__price">
-        <p>$999</p>
+        <p>${item.price}</p>
       </div>
       <div className="card__description">
         <div className="card__details">
@@ -31,7 +40,7 @@ export const Card: React.FC = () => {
         </div>
         
       </div><div className="card__buttons">
-          <button className='card__buttons-left'>Add to cart</button>
+          <button className='card__buttons-left' onClick={() => cart.add(item)}>Add to cart</button>
           <button className='card__buttons-right'>
             <div className="favourites">
               <img 

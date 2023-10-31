@@ -4,10 +4,14 @@ import { App } from './App';
 import './Styles/reset.scss';
 import './Styles/fonts.scss';
 import { HashRouter as Router } from 'react-router-dom';
+import { StorageProvider } from './Context/StorageContext';
+
 
 createRoot(document.getElementById('root') as HTMLDivElement)
     .render(
-        <Router>
-          <App />
-        </Router>
+        <StorageProvider>
+          <Router>
+            <App />
+          </Router>
+        </StorageProvider>
       )

@@ -1,7 +1,7 @@
 import React from 'react';
 import './card.scss'; 
 import { CartItem } from '../ItemList/types';
-import { useStorageContext } from '../Context/StorageContext';
+import { useStorageContext } from '../../Context/StorageContext';
 
 
 type Props = {

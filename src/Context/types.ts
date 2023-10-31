@@ -1,4 +1,4 @@
-import { CartItem } from "../ItemList/types";
+import { CartItem } from "../Components/ItemList/types";
 
 export type CartStorageValues = {
     items: CartItem[];

@@ -1,7 +1,7 @@
 import './Cart.scss';
 import { ItemList } from '../../Components/ItemList/ItemList';
 import { Button } from '../../Components/Button/Button';  
-import { useStorageContext } from '../../Components/Context/StorageContext';
+import { useStorageContext } from '../../Context/StorageContext';
  
 
 export const Cart = () => {

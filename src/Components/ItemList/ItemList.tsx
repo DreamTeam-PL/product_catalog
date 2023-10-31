@@ -1,7 +1,7 @@
 import './ItemList.scss';
 import { Item } from './Item';
 import { CartItem } from './types';
-import { useStorageContext } from '../Context/StorageContext';
+import { useStorageContext } from '../../Context/StorageContext';
 
 type ItemListProps = {
     items: CartItem[];

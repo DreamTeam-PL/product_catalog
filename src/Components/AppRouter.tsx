@@ -5,14 +5,14 @@ import { Favourites } from '../Pages/Favourites'
 import { Cart } from '../Pages/Cart/Cart'
 import { NotFoundPage } from './NotFoundPage/NotFoundPage';
 import { PhoneInfo } from './PhoneInfo/PhoneInfo';
-import { ItemList } from './ItemList/ItemList';
+import { Catalog } from '../Pages/Catalog';
 
 export const AppRouter: React.FC = () => {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/home' element={<Navigate to='/' />} />
-      <Route path='/phones' element={<ItemList items={[]} />} />
+      <Route path='/phones' element={<Catalog />} />
       <Route path='/phones/:productSlug' element={<PhoneInfo />} />
       <Route path='/tablets' element={<NotFoundPage />} />
       <Route path='/accesories' element={<NotFoundPage />} />

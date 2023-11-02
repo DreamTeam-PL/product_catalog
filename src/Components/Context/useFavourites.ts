@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from "react";
 import { FavouriteItem } from "../ItemList/types";
 
 export const useFavourites = () => {
-
   const [favouritesItems, setfavouritesItems] = useState<FavouriteItem[]>([]);
 
   useEffect(() => setfavouritesItems(JSON.parse(localStorage.getItem('favourites') || '[]')), []);

@@ -8,7 +8,7 @@ export type CartStorageValues = {
     decrease: (itemId:number) => void;
     totalCost: number;
     totalCount: number;
-}
+};
   
 export type FavouritesValues = {
     items: FavouriteItem[];
@@ -17,7 +17,7 @@ export type FavouritesValues = {
     increase: (itemId:number) => void;
     decrease: (itemId:number) => void;
     totalCount: number;
-}
+};
   
 export type StorageContextValues =  { 
     cart: CartStorageValues;

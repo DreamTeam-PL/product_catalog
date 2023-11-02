@@ -1,27 +1,24 @@
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { Home } from '../Pages/Home'
-import { Catalog } from '../Pages/Catalog'
-import { Product } from '../Pages/Product/Product' 
 import { Favourites } from '../Pages/Favourites'
 import { Cart } from '../Pages/Cart/Cart'
 import { NotFoundPage } from './NotFoundPage/NotFoundPage';
+import { PhoneInfo } from './PhoneInfo/PhoneInfo';
+import { ItemList } from './ItemList/ItemList';
 
 export const AppRouter: React.FC = () => {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/home' element={<Navigate to='/' />} />
-      <Route path='/catalog' element={<Catalog />}>
-        <Route path=':productType' element={<Catalog />} />
-      </Route>
-      <Route path='/product' element={<Product />}>
-        <Route path=':productSlug' element={<Product />} />
-      </Route>
+      <Route path='/phones' element={<ItemList items={[]} />} />
+      <Route path='/phones/:productSlug' element={<PhoneInfo />} />
+      <Route path='/tablets' element={<NotFoundPage />} />
+      <Route path='/accesories' element={<NotFoundPage />} />
       <Route path='/favourites' element={<Favourites />} />
       <Route path='/cart' element={<Cart />} />
-      <Route path='/page-not-found' element={<NotFoundPage />} />
-      <Route path='*' element={<Navigate to={'/page-not-found'} replace={true}/>} />
+      <Route path='*' element={<NotFoundPage />} />
     </Routes>
   )
 }

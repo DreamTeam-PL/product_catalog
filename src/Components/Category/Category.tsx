@@ -28,7 +28,7 @@ export const Category: React.FC<CategoryProps> = ({
         >
         </div>
       </div>
-      <Link to={`category/${productType}`} className='category__link'>
+      <Link to={`/${productType}`} className='category__link'>
         <p className='category__title'>{title}</p>
       </Link>
       <p className='category__count'>0 models</p>

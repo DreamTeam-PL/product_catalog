@@ -20,10 +20,13 @@ export const Favourites:React.FC = () => (<section className="hmm products">
     <h1 className="products__title">Mobile phones</h1>
     <p className="products__quantity"><span>5</span> models</p>
     <div className="products__catalog">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card item={{
+            id: 0,
+            name: "",
+            quantity: 0,
+            price: 0,
+            img: ""
+        }} />
+   
     </div>
     </section>)

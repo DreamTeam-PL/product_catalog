@@ -14,24 +14,24 @@ export const Category: React.FC<CategoryProps> = ({
  }) => {
   return (
     <div className='category'>
-      <div className={classNames('category__background', {
-            'category__background--phones': productType === 'phones',
-            'category__background--tablets': productType === 'tablets',
-            'category__background--accessories': productType === 'accessories',
-          }) }>
-        <div 
-          className={classNames('category__img', {
-            'category__img--phones': productType === 'phones',
-            'category__img--tablets': productType === 'tablets',
-            'category__img--accessories': productType === 'accessories',
-          }) }
-        >
-        </div>
-      </div>
       <Link to={`category/${productType}`} className='category__link'>
+        <div className={classNames('category__background', {
+              'category__background--phones': productType === 'phones',
+              'category__background--tablets': productType === 'tablets',
+              'category__background--accessories': productType === 'accessories',
+            }) }>
+          <div 
+            className={classNames('category__img', {
+              'category__img--phones': productType === 'phones',
+              'category__img--tablets': productType === 'tablets',
+              'category__img--accessories': productType === 'accessories',
+            }) }
+          >
+          </div>
+        </div>
         <p className='category__title'>{title}</p>
+        <p className='category__count'>0 models</p>
       </Link>
-      <p className='category__count'>0 models</p>
     </div>
   )
 }

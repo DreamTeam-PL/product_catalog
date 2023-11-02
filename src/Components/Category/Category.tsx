@@ -14,7 +14,7 @@ export const Category: React.FC<CategoryProps> = ({
  }) => {
   return (
     <div className='category'>
-      <Link to={`category/${productType}`} className='category__link'>
+      <Link to={`/${productType}`} className='category__link'>
         <div className={classNames('category__background', {
               'category__background--phones': productType === 'phones',
               'category__background--tablets': productType === 'tablets',

@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from 'react';
 import './Slider.scss'; 
+import { Link } from 'react-router-dom';
 
 
 export const Slider:React.FC = () => {
@@ -12,7 +13,7 @@ export const Slider:React.FC = () => {
             onClick={() => setSelected(current => current > 1 ? current - 1 : 3)}
         > </a>
         <main className={`slider__main slider__main--active-${selected}`}> 
-            <a href="/link-to-buy">
+            <Link to="/phones/1">
                 <picture className="slider__picture">
                     <source
                         media="(max-width: 639px)"
@@ -24,7 +25,7 @@ export const Slider:React.FC = () => {
                         alt="img1"
                     />
                 </picture>
-            </a>
+            </Link>
         </main>
         <a className='slider__button slider__button--next'
         onClick={() => setSelected(current => current < 3 ? current + 1 : 1)}

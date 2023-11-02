@@ -36,22 +36,14 @@ export const Catalog:React.FC = () => (<section className="hmm products">
         
     </div>
     <div className="products__catalog">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card item={{
+            id: 0,
+            name: "",
+            quantity: 0,
+            price: 0,
+            img: ""
+        }} />
+     
     </div>
     <div className="products__buttons">
         <div className="products__buttons-side">l</div>

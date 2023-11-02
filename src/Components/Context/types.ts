@@ -1,4 +1,4 @@
-import { CartItem } from "../ItemList/types";
+import { CartItem, FavouriteItem } from "../ItemList/types";
 
 export type CartStorageValues = {
     items: CartItem[];
@@ -11,7 +11,12 @@ export type CartStorageValues = {
 }
   
 export type FavouritesValues = {
-    items: number[];
+    items: FavouriteItem[];
+    add: (item:FavouriteItem) => void;
+    remove: (itemId:number) => void;
+    increase: (itemId:number) => void;
+    decrease: (itemId:number) => void;
+    totalCount: number;
 }
   
 export type StorageContextValues =  { 

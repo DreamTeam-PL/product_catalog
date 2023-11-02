@@ -24,6 +24,12 @@
             }
         }
 
+        &-next { 
+            &::before {
+                content: url('./next.svg');   
+            }
+        }
+
         &-remove { 
             &::before {
                 content: url('./remove.svg');   

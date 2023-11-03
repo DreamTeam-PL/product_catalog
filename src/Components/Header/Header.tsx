@@ -10,8 +10,6 @@ export function Header() {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  console.log(location.pathname);
-
   const navigateTo = (path: string) => {
     navigate(path);
     if (isMobileVersion) {

@@ -1,3 +1,5 @@
+@import "../../Styles/mixins.scss";
+
 .category {
   display: flex;
   flex-direction: column;
@@ -5,14 +7,14 @@
   width: 368px;
   height: 443px;
 
-  @media (max-width: 1199px) {
+  @include for-tablet() {
     & {
       width: 187px;
       height: 262px;
     }
   }
 
-  @media (max-width: 639px) {
+  @include for-phone() {
     & {
       width: 288px;
       height: 363px;
@@ -30,7 +32,7 @@
       width: 319px;
       height: 328px;
 
-      @media (max-width: 1199px) {
+      @include for-tablet() {
         & {
           background-image: url("./images/categoty-phones-tablet.png");
           width: 163px;
@@ -38,7 +40,7 @@
         }
       }
     
-      @media (max-width: 639px) {
+      @include for-phone() {
         & {
           background-image: url("./images/categoty-phones-mobile.png");
           width: 250px;
@@ -52,7 +54,7 @@
       width: 346px;
       height: 348px;
 
-      @media (max-width: 1199px) {
+      @include for-tablet() {
         & {
           background-image: url("./images/categoty-tablets-tablet.png");
           width: 176px;
@@ -60,7 +62,7 @@
         }
       }
     
-      @media (max-width: 639px) {
+      @include for-phone() {
         & {
           background-image: url("./images/categoty-tablets-mobile.png");
           width: 271px;
@@ -74,7 +76,7 @@
       width: 368px;
       height: 368px;
 
-      @media (max-width: 1199px) {
+      @include for-tablet() {
         & {
           background-image: url("./images/categoty-accessories-tablet.png");
           width: 187px;
@@ -82,7 +84,7 @@
         }
       }
     
-      @media (max-width: 639px) {
+      @include for-phone() {
         & {
           background-image: url("./images/categoty-accessories-mobile.png");
           width: 288px;
@@ -100,14 +102,14 @@
     margin-bottom: 24px;
     overflow: hidden;
 
-    @media (max-width: 1199px) {
+    @include for-tablet() {
       & {
         width: 187px;
         height: 187px;
       }
     }
 
-    @media (max-width: 639px) {
+    @include for-phone() {
       & {
         width: 288px;
         height: 288px;

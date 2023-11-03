@@ -8,8 +8,8 @@ export const Home:React.FC = () => (<section className="content landing">
     <h1 className="landing__title">Welcome to Nice Gadgets store!</h1>
     <main className="main">
         <Slider />
-        <Cards title="Brand new models" />
+        <Cards type="newest" />
         <Categories />
-        <Cards title="Hot prices" />
+        <Cards type="discount"/>
     </main>
 </section>) 

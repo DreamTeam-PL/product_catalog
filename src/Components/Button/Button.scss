@@ -22,12 +22,24 @@
             &::before {
                 content: url('./back.svg');   
             }
+
+            &:disabled {
+              &::before {
+                  content: url('./back-disabled.svg');  
+              }
+          }
         }
 
         &-next { 
             &::before {
                 content: url('./next.svg');   
             }
+            
+            &:disabled {
+              &::before {
+                  content: url('./next-disabled.svg');  
+              }
+          }
         }
 
         &-remove { 

@@ -1,5 +1,6 @@
 import { Button } from "../Components/Button/Button";
 import { Card } from "../Components/Card/Card";
+import { Pagination } from "../Components/Pagination/Pagination";
 import { ProductService } from '../Api/Products';
 import './catalog.scss';
 import { useEffect, useState } from "react";
@@ -51,14 +52,7 @@ export const Catalog:React.FC = () => {
         {products.map(product => (<Card key={product.id} item={product} />))}
     </div>
     <div className="products__buttons">
-        <div className="products__buttons-side">l</div>
-        <div className="products__buttons-center">
-            <div className="products__buttons-center-page">1</div>
-            <div className="products__buttons-center-page">2</div>
-            <div className="products__buttons-center-page">3</div>
-            <div className="products__buttons-center-page">4</div>
-        </div>
-        <div className="products__buttons-side">r</div>
+      <Pagination />
     </div>
     
 </section>)}

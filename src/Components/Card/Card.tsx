@@ -1,14 +1,10 @@
 import React from 'react';
 import './card.scss'; 
-import { CartItem } from '../ItemList/types';
 import { useStorageContext } from '../../Context/StorageContext';
+import { Product } from '../../types/types';
 
 
-type Props = {
-  item: CartItem;
-}
-
-export const Card: React.FC<Props> = ({ item }) => {
+export const Card: React.FC<{ item: Product }> = ({ item }) => {
   const { cart } = useStorageContext(); 
 
   return (
@@ -28,15 +24,15 @@ export const Card: React.FC<Props> = ({ item }) => {
       <div className="card__description">
         <div className="card__details">
           <div className="card__details-left">Screen</div>
-          <div className="card__details-right">6.1" OLED</div>
+          <div className="card__details-right">{item.screen}</div>
         </div>
         <div className="card__details">
           <div className="card__details-left">Capacity</div>
-          <div className="card__details-right">128 GB</div>
+          <div className="card__details-right">{item.capacity}</div>
         </div>
         <div className="card__details">
           <div className="card__details-left">RAM</div>
-          <div className="card__details-right">6 GB</div>
+          <div className="card__details-right">{item.ram}</div>
         </div>
         
       </div><div className="card__buttons">

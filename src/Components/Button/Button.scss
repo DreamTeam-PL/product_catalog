@@ -22,6 +22,24 @@
             &::before {
                 content: url('./back.svg');   
             }
+
+            &:disabled {
+              &::before {
+                  content: url('./back-disabled.svg');  
+              }
+          }
+        }
+
+        &-next { 
+            &::before {
+                content: url('./next.svg');   
+            }
+            
+            &:disabled {
+              &::before {
+                  content: url('./next-disabled.svg');  
+              }
+          }
         }
 
         &-remove { 
@@ -96,9 +114,10 @@
         border: 1px solid #B4BDC3;
         display: block;
         padding: 8px;
+        color: #0F0F11;
     
         &:not(:disabled):hover {
-            border: 1px solid rgb(15, 15, 17);
+            border: 1px solid #0F0F11;
         }
 
         &:has(.selected) {
@@ -108,6 +127,7 @@
 
         &:disabled {
             border: 1px solid #E2E6E9;
+            cursor: default;
         }
     }      
 }

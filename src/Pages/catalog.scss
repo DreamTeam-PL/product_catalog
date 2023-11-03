@@ -1,0 +1,94 @@
+.hmm {
+  margin: 0 152px;
+}
+
+.products {
+  &__position {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 93px;
+    margin: 24px 0 40px 0;
+    &-icon {
+      width: 16px;
+    }
+
+    &-name {
+      font-family: Mont;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      color: #89939a;
+      width: 45px;
+    }
+  }
+  &__title {
+    font-family: Mont;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 56px;
+    letter-spacing: -0.48px;
+    color: #0f0f11;
+    margin-bottom: 8px;
+  }
+
+  &__quantity {
+    font-family: Mont;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 21px;
+    color: #89939a;
+    margin-bottom: 40px;
+  }
+
+  &__filter {
+    display: flex;
+    margin-bottom: 24px;
+    &-filter {
+      margin: 0;
+      width: 176px;
+      height: 59px;
+      margin-right: 8px;
+
+      &-name {
+        font-family: Mont;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        color: #89939a;
+      }
+    }
+  }
+
+  &__catalog {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 16px;
+    row-gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  &__buttons {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 248px;
+    margin-bottom: 80px;
+
+    &-center {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      width: 152px;
+
+      &-page {
+        width: 32px;
+        text-align: center;
+      }
+    }
+  }
+}

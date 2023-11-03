@@ -1,10 +1,10 @@
 import './ItemList.scss';
-import { Item } from './Item';
-import { CartItem } from './types';
-import { useStorageContext } from '../Context/StorageContext';
+import { Item } from './Item'; 
+import { useStorageContext } from '../../Context/StorageContext';
+import { Product } from '../../types/types';
 
 type ItemListProps = {
-    items: CartItem[];
+    items: Product[];
 }
 
 export const ItemList:React.FC<ItemListProps> = ({ items }) => {
@@ -15,7 +15,7 @@ export const ItemList:React.FC<ItemListProps> = ({ items }) => {
             key={item.id}
             id={item.id}
             name={item.name}
-            quantity={item.quantity}
+            quantity={item.quantity || 1}
             price={item.price}
             img=""
             increase={() => cart.increase(item.id)}

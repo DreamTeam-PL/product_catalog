@@ -1,8 +1,8 @@
-import { CartItem } from "../Components/ItemList/types";
+import { Product } from "../types/types";
 
 export type CartStorageValues = {
-    items: CartItem[];
-    add: (item:CartItem) => void;
+    items: Product[];
+    add: (item:Product) => void;
     remove: (itemId:number) => void;
     increase: (itemId:number) => void;
     decrease: (itemId:number) => void;

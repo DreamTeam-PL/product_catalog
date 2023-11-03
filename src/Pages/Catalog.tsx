@@ -48,7 +48,7 @@ export const Catalog:React.FC = () => {
         
     </div>
     <div className="products__catalog">
-        {products.map(product => (<Card item={product} />))}
+        {products.map(product => (<Card key={product.id} item={product} />))}
     </div>
     <div className="products__buttons">
         <div className="products__buttons-side">l</div>

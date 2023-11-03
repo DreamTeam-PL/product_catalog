@@ -22,7 +22,7 @@ export const Categories: React.FC = () => {
   <section className='categories'>
     <h2 className='landing__sub-title'>Shop by category</h2>
     <div className='categories__blocks'>
-      {categories.map((category) => <Category title={category.title} productType={category.productType}/>)}
+      {categories.map((category) => <Category key={category.title} title={category.title} productType={category.productType}/>)}
     </div>
   </section>
   )

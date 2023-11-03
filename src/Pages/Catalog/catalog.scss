@@ -1,5 +1,15 @@
+@import "../../Styles/mixins.scss";
+
 .hmm {
   margin: 0 152px;
+
+  @include for-tablet() {
+    margin: 0 32px;
+  }
+
+  @include for-phone() {
+    margin: 0 32px;
+  }
 }
 
 .products {
@@ -32,6 +42,12 @@
     letter-spacing: -0.48px;
     color: #0f0f11;
     margin-bottom: 8px;
+
+    @include for-phone() {
+      font-size: 32px;
+      line-height: 41px;
+      letter-spacing: -0.32px;
+    }
   }
 
   &__quantity {
@@ -70,6 +86,14 @@
     grid-gap: 16px;
     row-gap: 40px;
     margin-bottom: 40px;
+
+    @include for-tablet() {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include for-phone() {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__buttons {

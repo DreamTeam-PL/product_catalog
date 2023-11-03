@@ -1,8 +1,11 @@
-import { Button } from "../Components/Button/Button";
-import { Card } from "../Components/Card/Card";
+import { Button } from "../../Components/Button/Button";
+import { Card } from "../../Components/Card/Card";
 
 import './catalog.scss';
-export const Catalog:React.FC = () => (<section className="hmm products">
+export const Catalog:React.FC = () => {
+    const componentsArray = Array(16).fill(null);
+    return (
+    <section className="hmm products">
     <div className="products__position">
         <div className="products__position-icon">
             <img
@@ -36,14 +39,16 @@ export const Catalog:React.FC = () => (<section className="hmm products">
         
     </div>
     <div className="products__catalog">
-        <Card item={{
-            id: 0,
-            name: "",
-            quantity: 0,
-            price: 0,
-            img: ""
-        }} />
-     
+    {componentsArray.map((_, index) => (
+       <Card key={index}
+       item={{
+        id: 0,
+        name: "",
+        quantity: 0,
+        price: 0,
+        img: ""
+    }} />
+      ))}
     </div>
     <div className="products__buttons">
         <div className="products__buttons-side">l</div>
@@ -57,3 +62,4 @@ export const Catalog:React.FC = () => (<section className="hmm products">
     </div>
     
 </section>)
+};

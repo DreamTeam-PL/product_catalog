@@ -1,11 +1,11 @@
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { Home } from '../Pages/Home'
-import { Favourites } from '../Pages/Favourites'
+import { Favourites } from '../Pages/Favourites/Favourites'
 import { Cart } from '../Pages/Cart/Cart'
 import { NotFoundPage } from './NotFoundPage/NotFoundPage';
 import { PhoneInfo } from './PhoneInfo/PhoneInfo';
-import { Catalog } from '../Pages/Catalog';
+import { Catalog } from '../Pages/Catalog/Catalog';
 
 export const AppRouter: React.FC = () => {
   return (

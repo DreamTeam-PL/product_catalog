@@ -42,6 +42,12 @@
           }
         }
 
+        &-chevron-up {
+            &::before {
+                content: url('./chevron-up.svg');   
+            }
+        }
+
         &-remove { 
             &::before {
                 content: url('./remove.svg');   

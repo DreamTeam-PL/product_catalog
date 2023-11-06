@@ -3,7 +3,7 @@ import './Button.scss';
 type ButtonProps = {
     type: 'color' | 'circle' | 'icon' | 'iconText';
     value?:string; 
-    icon?: 'increase' | 'decrease' | 'close' | 'remove' | 'back' | 'next';
+    icon?: 'increase' | 'decrease' | 'close' | 'remove' | 'back' | 'next' | 'chevron-up';
     onClick?: ()=>void;
     className?: string;
     disabled?: boolean;

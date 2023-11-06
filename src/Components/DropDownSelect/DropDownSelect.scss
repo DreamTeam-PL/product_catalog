@@ -1,0 +1,74 @@
+.dropDown {
+    position: absolute; 
+    z-index: 999;
+    width: 176px;
+    font-family: 'Mont', Helvetica, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 21px;
+    cursor: pointer;
+    user-select: none;
+
+    &__selected {
+        border: 1px solid #B4BDC3;
+        padding: 10px 12px;  
+        border-radius: 8px;
+        background-color: #fff;
+
+        &::after {
+            content: url('./dropArrow.svg');
+            width: 16px;
+            height: 16px;  
+            position: absolute;
+            right: 12px;
+            top: 14px;
+            transition: all 0.2s linear;
+        }
+
+        &--focused {
+            border-color: #0F0F11;
+
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
+
+    }
+
+
+    &__options {
+        margin-top: 4px;
+        padding: 8px 0;
+        background-color: #fff;
+        border: 1px solid #B4BDC3;
+        border-radius: 8px; 
+        animation: rozwin 0.5s ease forwards;
+        overflow: hidden;
+    }
+
+    &__option {
+        color: #89939A; 
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 21px; 
+        padding: 6px 12px;
+
+        &:hover {
+            color: #0F0F11;
+            background-color: #FAFBFC;
+        }
+    }
+
+ 
+
+}
+
+@keyframes rozwin {
+    from {
+      max-height: 0; /* Początkowy stan - niewidoczny */
+    }
+    to {
+      max-height: 50vh; /* Końcowy stan - widoczny */
+    }
+  }

@@ -5,6 +5,7 @@ import { ProductService } from '../../Api/Products';
 import './catalog.scss';
 import { useEffect, useState } from "react";
 import { Product } from "../../types/types";
+import { Breadcrumbs } from "../../Components/Breadcrumbs/Breadcrumbs";
 
 export const Catalog:React.FC = () => {
     const [products, setProducts] = useState<Product[]>([]);
@@ -16,21 +17,7 @@ export const Catalog:React.FC = () => {
       }, [products]);
     
     return (<section className="hmm products">
-    <div className="products__position">
-        <div className="products__position-icon">
-            <img
-            className='img'
-            src={require('./home.png')}
-            alt="Home" />
-        </div>
-        <div className="products__position-icon">
-            <img
-            className='img'
-            src={require('./arrow right.png')}
-            alt="Right arrow direction" />
-        </div>
-        <p className="products__position-name">Phones</p>
-    </div>
+      <Breadcrumbs />
     <h1 className="products__title">Mobile phones</h1>
     <p className="products__quantity"><span>95</span> models</p>
     <div className="products__filter">

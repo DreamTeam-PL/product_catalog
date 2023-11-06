@@ -6,9 +6,11 @@ import './catalog.scss';
 import { useEffect, useState } from "react";
 import { Product } from "../../types/types";
 import { Breadcrumbs } from "../../Components/Breadcrumbs/Breadcrumbs";
+import { DropDownSelect } from "../../Components/DropDownSelect/DropDownSelect";
 
 export const Catalog:React.FC = () => {
     const [products, setProducts] = useState<Product[]>([]);
+    const [perPage, setPerPage] = useState<number>(16);
 
     useEffect(() => {
         ProductService.getProducts()
@@ -24,13 +26,19 @@ export const Catalog:React.FC = () => {
         <div className="products__filter-filter">
             <div className="products__filter-filter-name"><p>Sort by</p></div>
             <div className="products__filter-filter-button">
-                <Button type='color' value='try'/>
+                <DropDownSelect
+                    options={['Najnowsze', 'Najstarsze', 'Najdroższe', 'Najtańsze']} 
+                    onChange={(option: number) => null}
+                />
             </div>   
         </div>
         <div className="products__filter-filter">
             <div className="products__filter-filter-name"><p>Items on Page</p></div>
             <div className="products__filter-filter-button">
-                <Button type='color' value='try'/>
+                <DropDownSelect 
+                    options={['16', '32', '63']}
+                    onChange={(option: number) => setPerPage(option)}
+                />
             </div>   
         </div>
         

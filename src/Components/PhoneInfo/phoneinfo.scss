@@ -1,6 +1,6 @@
 .phone__info {
   &-title {
-    font-family: 'Mont', sans-serif;
+    font-family: "Mont", sans-serif;
     font-weight: 800;
     font-size: 32px;
     font-weight: 800;
@@ -20,7 +20,7 @@
   }
 
   &-photo-content {
-    display: 'flex';
+    display: "flex";
     justify-content: center;
     align-items: center;
     padding: 7px;
@@ -183,6 +183,7 @@
     }
 
     &-subtitle {
+      margin: 0;
       display: inline-block;
       color: #0f0f11;
       font-family: Mont;

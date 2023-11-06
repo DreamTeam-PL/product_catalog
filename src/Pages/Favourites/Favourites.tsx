@@ -1,18 +1,18 @@
-import { Card } from "../Components/Card/Card";
+import { Card } from "../../Components/Card/Card";
 
-import './catalog.scss';
+import '../Catalog/catalog.scss';
 export const Favourites:React.FC = () => (<section className="hmm products">
     <div className="products__position">
         <div className="products__position-icon">
             <img
             className='img'
-            src={require('./home.png')}
+            src={require('../Catalog/home.png')}
             alt="Home" />
         </div>
         <div className="products__position-icon">
             <img
             className='img'
-            src={require('./arrow right.png')}
+            src={require('../Catalog/arrow right.png')}
             alt="Right arrow direction" />
         </div>
         <p className="products__position-name">Favourites</p>

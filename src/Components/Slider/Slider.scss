@@ -112,3 +112,8 @@
     }
   }
 }
+
+.slider__main.transitioning {
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}

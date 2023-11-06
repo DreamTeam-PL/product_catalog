@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import { FavouriteItem } from "../Components/ItemList/types";
+import { Product } from "../types/types";
 
 export const useFavourites = () => {
-  const [favouritesItems, setfavouritesItems] = useState<FavouriteItem[]>([]);
+  const [favouritesItems, setfavouritesItems] = useState<Product[]>([]);
 
   useEffect(
     () =>
@@ -17,18 +17,18 @@ export const useFavourites = () => {
     [favouritesItems]
   );
   const favourites = {
-    items: useMemo((): FavouriteItem[] => favouritesItems, [favouritesItems]),
+    items: useMemo((): Product[] => favouritesItems, [favouritesItems]),
 
     totalCount: useMemo(
       (): number =>
         favouritesItems.reduce(
-          (totalCount, item) => totalCount + item.quantity,
+          (totalCount, item) => totalCount + (item.quantity || 1),
           0
         ),
       [favouritesItems]
     ),
 
-    add: (item: FavouriteItem) =>
+    add: (item: Product) =>
       favourites.includes(item.id)
         ? favourites.increase(item.id)
         : setfavouritesItems((items) => [...items, item]),
@@ -45,7 +45,7 @@ export const useFavourites = () => {
     increase: (itemId: number) =>
       setfavouritesItems((items) =>
         items.map((item) =>
-          item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
+          item.id === itemId ? { ...item, quantity: (item.quantity || 1) + 1 } : item
         )
       ),
 
@@ -54,7 +54,7 @@ export const useFavourites = () => {
         ? setfavouritesItems((items) =>
             items.map((item) =>
               item.id === itemId
-                ? { ...item, quantity: item.quantity - 1 }
+                ? { ...item, quantity: (item.quantity || 1) - 1 }
                 : item
             )
           )

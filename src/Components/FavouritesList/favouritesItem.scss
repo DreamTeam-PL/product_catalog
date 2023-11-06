@@ -1,0 +1,119 @@
+.card {
+    background-color: #fff;
+    width: 272px;
+    height: auto;
+    padding: 32px;
+    border-radius: 8px;
+    border: 1px solid #e2e6e9;
+    box-sizing: border-box;
+  
+    &__img {
+      width: 208px;
+      height: 196px;
+      display: flex;
+      margin-bottom: 8px;
+    }
+  
+    &__title {
+      color: #0f0f11;
+      font-family: Mont;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 21px;
+      padding-top: 16px;
+      margin-bottom: 8px;
+    }
+  
+    &__price {
+      font-family: Mont;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 140%;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e2e6e9;
+      margin-bottom: 8px;
+    }
+  
+    &__description {
+      padding-top: 8px;
+      margin-bottom: 8px;
+    }
+  
+    &__details {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0;
+  
+      &:last-child {
+        padding-bottom: 8px;
+      }
+  
+      &-left {
+        margin: 0;
+        font-family: Mont;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        color: #89939a;
+      }
+  
+      &-right {
+        margin: 0;
+        font-family: Mont;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        color: #0f0f11;
+      }
+    }
+  
+    &__buttons {
+      display: flex;
+      justify-content: space-between;
+  
+      &-left {
+        width: 160px;
+        height: 40px;
+        border-radius: 48px;
+        background: #4219d0;
+        color: #ffffff;
+        font-family: Mont;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 21px;
+        cursor: pointer;
+      }
+  
+      &-right {
+        width: 40px;
+        height: 40px;
+        border-radius: 48px;
+        border: 1px solid #b4bdc3;
+        cursor: pointer;
+  
+        &:hover {
+          border: 1px solid #0f0f11;
+        }
+      }
+    }
+  }
+  
+  .favourites {
+    width: 16px;
+    height: 16px;
+  }
+  
+  img {
+    width: auto;
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  

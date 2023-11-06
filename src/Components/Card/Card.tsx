@@ -5,7 +5,7 @@ import { Product } from '../../types/types';
 
 
 export const Card: React.FC<{ item: Product }> = ({ item }) => {
-  const { cart } = useStorageContext(); 
+  const { cart, favourites } = useStorageContext(); 
 
   return (
     <div className='card'>
@@ -37,10 +37,16 @@ export const Card: React.FC<{ item: Product }> = ({ item }) => {
         
       </div><div className="card__buttons">
           <button className='card__buttons-left' onClick={() => cart.add(item)}>Add to cart</button>
-          <button className='card__buttons-right'>
+          <button className='card__buttons-right' onClick={() => {
+            favourites.includes(item.id)
+            ? favourites.remove(item.id)
+            : favourites.add(item)
+            }}>
             <div className="favourites">
               <img 
-                src={require('./Favourites (Heart Like).png')} 
+              src={favourites.includes(item.id) 
+                ? require('./Favourites Filled (Heart Like).png')
+                : require('./Favourites (Heart Like).png')}
                 alt="Favoutites"
               />
             </div>

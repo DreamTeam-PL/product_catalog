@@ -16,11 +16,11 @@ export const Cards: React.FC<CardsProps> = ({ type }) => {
   }, [type]);
   
   return (
-    <>
+    <div className='hmm2'>
       <p className="title">{type === 'newest' ? 'Brand new models' : 'Hot prices'}</p>
       <div className='cards'>
         {catalogItems.map(product => <Card key={product.id} item={product}/>)}
       </div>
-    </>
+    </div>
   );
 };

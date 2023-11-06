@@ -1,10 +1,10 @@
-import { Button } from "../Components/Button/Button";
-import { Card } from "../Components/Card/Card";
-import { Pagination } from "../Components/Pagination/Pagination";
-import { ProductService } from '../Api/Products';
+import { Button } from "../../Components/Button/Button";
+import { Card } from "../../Components/Card/Card";
+import { Pagination } from "../../Components/Pagination/Pagination";
+import { ProductService } from '../../Api/Products';
 import './catalog.scss';
 import { useEffect, useState } from "react";
-import { Product } from "../types/types";
+import { Product } from "../../types/types";
 
 export const Catalog:React.FC = () => {
     const [products, setProducts] = useState<Product[]>([]);

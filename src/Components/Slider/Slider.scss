@@ -4,6 +4,36 @@
   justify-content: center;
   gap: 19px;
   margin-bottom: 28px;
+  padding: 0;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(0);
+
+  @media (min-width: 640px) {
+    padding: 0 24px;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 0 32px;
+  }
+
+  @media (min-width: 1201px) {
+    padding: 0 152px;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 1040px;
+    max-height: 400px;
+
+    @media (max-width: 639px) {
+      max-height: 639px;
+    }
+
+    @media (min-width: 640px) {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  }
 
   &__main {
     position: relative;
@@ -27,58 +57,6 @@
     }
   }
 
-  @media (max-width: 639px) {
-    &__main {
-      width: 100vw;
-      max-height: 640px;
-    }
-  }
-  @media (min-width: 640px) {
-    padding: 0 24px;
-
-    &__main {
-      @media (max-width: 1200px) {
-        max-height: 400px;
-      }
-
-      @media (max-width: 639px) {
-        max-height: 639px;
-      }
-
-      @media (min-width: 1201px) {
-        height: 400px;
-        width: 1040px;
-      }
-    }
-  }
-
-  @media (min-width: 1200px) {
-    gap: 16px;
-  }
-
-  &__picture {
-    position: relative;
-    max-width: 100px;
-    height: 100px;
-  }
-
-  &__image {
-    display: block;
-    max-width: 1040px;
-    max-height: 400px;
-    width: 100%;
-    height: auto;
-    border: 1px solid #ccc;
-    @media (max-width: 639px) {
-      max-height: 639px;
-    }
-
-    @media (min-width: 640px) {
-      border-radius: 8px;
-      overflow: hidden;
-    }
-  }
-
   &__button {
     border: 1px solid #b4bdc3;
     background-color: #fff;
@@ -90,8 +68,6 @@
     justify-content: center;
 
     &--prev {
-      grid-row: 1 / 2;
-      grid-column: 1 / 2;
       &::after {
         content: url('prev.svg');
         width: 16px;
@@ -99,8 +75,6 @@
     }
 
     &--next {
-      grid-row: 1 / 2;
-      grid-column: 3 / 4;
       &::after {
         content: url('next.svg');
         width: 16px;
@@ -113,7 +87,35 @@
   }
 }
 
-.slider__main.transitioning {
-  transition: opacity 0.5s ease;
-  opacity: 0;
+.slider__main {
+  position: relative;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider--entering {
+  animation: slideIn 0.5s forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.slider--exiting {
+  animation: slideOut 0.5s forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }

@@ -1,45 +1,39 @@
 import React from 'react';
 import './footer.scss';
+import { Button } from '../Button/Button';
 
 export const Footer: React.FC = () => {
     return (
-        <>
-            <div className="footer-line"></div>
+    <footer className="footer">
+        <div className='footer__wrapper'>
+            <section className='footer__logo'> 
+                <svg width="89" height="32" xmlns="http://www.w3.org/2000/svg"> 
+                    <image x="0" y="0" width="89" height="32" xlinkHref={require('./Logo.png')} />  
+                </svg>
 
-            <footer className="footer">
-                <img
-                    className="footer__logo"
-                    alt="Logo - footer"
-                    src={require('./Logo.png')}
-                ></img>
-                <div className="menu">
+            </section>
 
-                    <a className="footer-link">GITHUB</a>
-                    <a className="footer-link">CONTACTS</a>
-                    <a className="footer-link">RIGHTS</a>
+            <nav className='footer__nav'>
+                <a href="/" className='footer__link'>GitHub</a>
+                <a href="/" className='footer__link'>Contacts</a>
+                <a href="/" className='footer__link'>Rights</a>
+            </nav>
 
-                </div>
-                <div className="footer__back-to-top back-to-top">
+            <section className='footer__back-top'>
+                
+                <span className='footer__back-top--text'>Back to top</span>
+                <Button 
+                    type="circle"
+                    icon="chevron-up"
+                    onClick={() => window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth',
+                      })}
+                />
+                
+            </section>
 
-                    <span className="back-to-top__txt">
-                        Back to top
-                    </span>
-
-                    <div className="back-to-top__arrow-button arrow-button">
-                        <img
-                            className="arrow-button--circle"
-                            alt="Back to top"
-                            src={require('./rectangle.png')}
-                        ></img>
-                        <img
-                            className="arrow-button-circle__chevron--up"
-                            alt="Back to top"
-                            src={require('./chevron.png')}
-                        ></img>
-                    </div>
-                    
-                </div>
-            </footer>
-        </>
+        </div>
+    </footer>
     );
 };

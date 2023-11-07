@@ -1,16 +1,25 @@
 .dropDown {
-    position: absolute; 
-    z-index: 999;
-    width: 176px;
+    position: relative; 
+    box-sizing: border-box;
+    z-index: 2;  
     font-family: 'Mont', Helvetica, sans-serif;
     font-size: 14px;
+    width: 100%;
     font-style: normal;
     font-weight: 600;
     line-height: 21px;
     cursor: pointer;
     user-select: none;
 
+    &__label { 
+        color: #89939A; 
+        font-family: 'Mont', Helvetica, sans-serif;
+        font-size: 12px; 
+        font-weight: 600; 
+    }
+
     &__selected {
+        position: relative;
         border: 1px solid #B4BDC3;
         padding: 10px 12px;  
         border-radius: 8px;
@@ -45,6 +54,8 @@
         border-radius: 8px; 
         animation: rozwin 0.5s ease forwards;
         overflow: hidden;
+        position: absolute;
+        width: 100%;
     }
 
     &__option {

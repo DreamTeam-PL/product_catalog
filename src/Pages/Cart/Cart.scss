@@ -33,7 +33,7 @@
     &__container {
         display: flex;  
         gap: 16px; 
-        align-items: start;
+        align-items: flex-start;
 
         @media (max-width: 1199px) {
             flex-direction: column;

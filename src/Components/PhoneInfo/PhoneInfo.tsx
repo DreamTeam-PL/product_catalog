@@ -3,10 +3,13 @@ import { Circle } from './Circle'
 import './phoneinfo.scss'
 import { Capacity } from './Capacity'
 import { FavIcon } from './favicon'
+import { Breadcrumbs } from '../Breadcrumbs/Breadcrumbs';
 
 export const PhoneInfo: React.FC = () => {
+
   return (
     <div className='phone__info'>
+      <Breadcrumbs />
       <h1 className='phone__info-title'>
         Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)
       </h1>
@@ -16,35 +19,35 @@ export const PhoneInfo: React.FC = () => {
             <img
               className='phone__info-phone-photo phone__infophone-photo-small'
               src={require('../../Assets/Images/Iphone11.png')}
-              alt='Image'
+              alt='Phone'
             />
           </div>
           <div className='phone__info-photo-content'>
             <img
               className='phone__info-phone-photo phone__infophone-photo-small'
               src={require('../../Assets/Images/Iphone11.png')}
-              alt='Image'
+              alt='Phone'
             />
           </div>
           <div className='phone__info-photo-content'>
             <img
               className='phone__info-phone-photo phone__infophone-photo-small'
               src={require('../../Assets/Images/Iphone11.png')}
-              alt='Image'
+              alt='Phone'
             />
           </div>
           <div className='phone__info-photo-content'>
             <img
               className='phone__info-phone-photo phone__infophone-photo-small'
               src={require('../../Assets/Images/Iphone11.png')}
-              alt='Image'
+              alt='Phone'
             />
           </div>
           <div className='phone__info-photo-content'>
             <img
               className='phone__info-phone-photo phone__infophone-photo-small'
               src={require('../../Assets/Images/Iphone11.png')}
-              alt='Image'
+              alt='Phone'
             />
           </div>
         </div>
@@ -52,7 +55,7 @@ export const PhoneInfo: React.FC = () => {
           <img
             className='phone-photo phone-photo-small'
             src={require('../../Assets/Images/Iphone_11.png')}
-            alt='Image'
+            alt='Phone'
           />
         </div>
         <div className='phone__info-main'>

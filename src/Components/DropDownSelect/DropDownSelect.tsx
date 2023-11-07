@@ -1,21 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './DropDownSelect.scss';
 
 type Props = {
     options: string[];
     onChange: ( option: number ) => void;
+    label?:string;
+    className?:string; 
+    selected: number;
 };
 
-export const DropDownSelect:React.FC<Props> = ({ options, onChange }) => {
-    const [selectedOption, setSelectedOption] = useState<number>(0);
+export const DropDownSelect:React.FC<Props> = ({ options, onChange, label, className, selected}) => {
+    console.log('Init selected: ', selected)
+    const [selectedOption, setSelectedOption] = useState<number>(selected || 0);
     const [focus, setFocus] = useState<boolean>(false);
 
-    return (<div className='dropDown'>
+    return (<div className={`dropDown ${className ? className : '' }`}>
+        {label && <p className='dropDown__label'> {label} </p>}
         <p
             className={`dropDown__selected ${focus ? 'dropDown__selected--focused': ''}`}
             onClick={() => setFocus(!focus)}
         >
-            {options[selectedOption]}
+            {   options[selectedOption]}
         </p>
 
         {focus && (<ul className='dropDown__options'>

@@ -12,7 +12,7 @@ export const AppRouter: React.FC = () => {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/home' element={<Navigate to='/' />} />
+      <Route path='/home' element={<Navigate to='/' replace={true}/>} />
       <Route path='/phones' element={<Catalog />} />
       <Route path='/phones/:productSlug' element={<PhoneInfo />} />
       <Route path='/tablets' element={<PageInProgress />} />

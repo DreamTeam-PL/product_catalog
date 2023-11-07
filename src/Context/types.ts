@@ -1,4 +1,3 @@
-import { FavouriteItem } from "../Components/ItemList/types";
 import { Product } from "../types/types";
 
 export type CartStorageValues = {
@@ -12,9 +11,10 @@ export type CartStorageValues = {
 };
   
 export type FavouritesValues = {
-    items: FavouriteItem[];
-    add: (item:FavouriteItem) => void;
+    items: Product[];
+    add: (item:Product) => void;
     remove: (itemId:number) => void;
+    includes: (itemId: number) => boolean;
     increase: (itemId:number) => void;
     decrease: (itemId:number) => void;
     totalCount: number;

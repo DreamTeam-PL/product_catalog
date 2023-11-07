@@ -1,11 +1,14 @@
 .card {
   background-color: #fff;
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-end; 
   width: 272px;
   height: auto;
   padding: 32px;
   border-radius: 8px;
   border: 1px solid #e2e6e9;
-  box-sizing: border-box;
+  box-sizing: border-box; 
 
   &__img {
     width: 208px;
@@ -15,6 +18,7 @@
   }
 
   &__title {
+    width: 100%;
     color: #0f0f11;
     font-family: Mont;
     font-size: 14px;
@@ -33,10 +37,12 @@
     line-height: 140%;
     padding-bottom: 8px;
     border-bottom: 1px solid #e2e6e9;
-    margin-bottom: 8px;
+    margin-bottom: 8px; 
+    width: 100%;
   }
 
   &__description {
+    width: 100%;
     padding-top: 8px;
     margin-bottom: 8px;
   }
@@ -75,6 +81,8 @@
   &__buttons {
     display: flex;
     justify-content: space-between;
+    
+    width: 100%;
 
     &-left {
       width: 160px;

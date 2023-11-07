@@ -27,11 +27,11 @@ export abstract class ProductService {
     };
 
     static getNewest = () => {
-        return client.get<Product[]>(`/products/new`);
+        return client.get<ListResult>(`/products/new`);
     };
 
     static getDiscounted = () => {
-        return client.get<Product[]>(`/products/discount`);
+        return client.get<ListResult>(`/products/discount`);
     };
 
 

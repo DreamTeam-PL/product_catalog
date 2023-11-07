@@ -4,7 +4,7 @@ $gray-primary: #0F0F11;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    justify-content: start;
+    justify-content: flex-start;
 
     &__title { 
         color: $gray-primary;

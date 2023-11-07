@@ -48,6 +48,12 @@
             }
         }
 
+        &-home {
+            &::before {
+                content: url('./home.svg');   
+            }
+        }
+
         &-remove { 
             &::before {
                 content: url('./remove.svg');   

@@ -9,9 +9,9 @@ export const App: React.FC = () => {
   return (
     <div className='productCatalog'>
       <Header />
-      <section className='content'>
+      <main className='content'>
         <AppRouter />
-      </section>
+      </main>
       <Footer />
     </div>
   )

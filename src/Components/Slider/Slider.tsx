@@ -7,13 +7,19 @@ export const Slider: React.FC = () => {
   const [isTransitioning, setTransitioning] = useState(false)
   const touchStartX = useRef(0)
   const touchEndX = useRef(0)
+  const [sliderClass, setSliderClass] = useState('slider')
 
   useEffect(() => {
     const timer = setInterval(() => {
       setTransitioning(true)
+      setSliderClass('slider slider--exiting')
       setTimeout(() => {
         setSelected((current) => (current < 3 ? current + 1 : 1))
         setTransitioning(false)
+        setSliderClass('slider slider--entering')
+        setTimeout(() => {
+          setSliderClass('slider')
+        }, 500)
       }, 500)
     }, 10000)
 
@@ -24,17 +30,31 @@ export const Slider: React.FC = () => {
 
   const handlePrevClick = () => {
     setTransitioning(true)
+    setSliderClass('slider slider--exiting')
+
     setTimeout(() => {
       setSelected((current) => (current > 1 ? current - 1 : 3))
-      setTransitioning(false)
+      setSliderClass('slider slider--entering')
+
+      setTimeout(() => {
+        setSliderClass('slider')
+        setTransitioning(false)
+      }, 500)
     }, 500)
   }
 
   const handleNextClick = () => {
     setTransitioning(true)
+    setSliderClass('slider slider--exiting')
+
     setTimeout(() => {
       setSelected((current) => (current < 3 ? current + 1 : 1))
-      setTransitioning(false)
+      setSliderClass('slider slider--entering')
+
+      setTimeout(() => {
+        setSliderClass('slider')
+        setTransitioning(false)
+      }, 500)
     }, 500)
   }
 
@@ -55,7 +75,7 @@ export const Slider: React.FC = () => {
 
   return (
     <section
-      className={`slider slider--active-${selected}`}
+      className={sliderClass}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >

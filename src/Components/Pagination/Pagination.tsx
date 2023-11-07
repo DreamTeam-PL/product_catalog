@@ -4,15 +4,17 @@ import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import './pagination.scss';
 
-export const Pagination: React.FC = () => {
+type Props = {
+  totalAmount: number;
+  itemsPerPage: number;
+}
+
+export const Pagination: React.FC<Props> = ({ totalAmount, itemsPerPage }) => {
   const location = useLocation();
   const currentPath = location.pathname;
   const [searchParams] = useSearchParams();
   const [currentPage, setCurrentPage] = useState<number>(1);
   const navigate = useNavigate();
-
-  const totalAmount = 64;
-  const itemsPerPage = 16
   const numberOfPages = Math.ceil(totalAmount / itemsPerPage); 
   
   useEffect(() => {

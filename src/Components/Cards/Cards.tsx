@@ -12,7 +12,7 @@ export const Cards: React.FC<CardsProps> = ({ type }) => {
   const [catalogItems, setCatalogItems] = useState<Product[]>([]);
 
   useEffect(() => {
-    ((type === 'newest') ? ProductService.getNewest() : ProductService.getDiscounted()).then(setCatalogItems);
+    ((type === 'newest') ? ProductService.getNewest() : ProductService.getDiscounted()).then(result => setCatalogItems(result.data));
   }, [type]);
   
   return (

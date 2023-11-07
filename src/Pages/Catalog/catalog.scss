@@ -1,114 +1,71 @@
 @import "../../Styles/mixins.scss";
 
-.hmm {
-  margin: 0 152px;
+.catalog { 
+  box-sizing: border-box;
+  margin: auto auto;
+  max-width: 1200px; 
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 24px 16px;
 
-  @include for-desktop() {
-    & {
-      margin: 0 32px;
-    }
+  @media(min-width: 640px) {
+    padding: 24px;
   }
-}
 
-.products {
-  &__position {
+  @media(min-width: 1200px) {
+    padding: 32px;
+  }
+
+  &__path {
+    display: grid;
+    grid-template-columns: 32px auto;
+  }
+
+  &__pathName {
+    color: #89939A;
+    font-family: 'Mont', Helvetica, sans-serif;
+    font-size: 12px;  
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 93px;
-    margin: 24px 0 40px 0;
-    &-icon {
-      width: 16px;
-    }
+    align-items: center; 
+    font-weight: 600; 
+  }
 
-    &-name {
-      font-family: Mont;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: normal;
-      color: #89939a;
-      width: 45px;
+  &__pathIcon { 
+    position: relative;    
+
+    &::after {
+      content: url('./arrow right.png'); 
+      position: absolute;
     }
   }
+
   &__title {
-    font-family: Mont;
-    font-size: 48px;
-    font-style: normal;
+    color: #0F0F11; 
+    font-family: 'Mont', Helvetica, sans-serif;
+    font-size: 32px; 
     font-weight: 800;
-    line-height: 56px;
-    letter-spacing: -0.48px;
-    color: #0f0f11;
-    margin-bottom: 8px;
+    line-height: 41px; 
+    letter-spacing: -0.32px;
+
+    @media (min-width: 640px) { 
+      font-size: 48px;
+      line-height: 56px;
+      letter-spacing: -0.48px;
+    }
   }
 
-  &__quantity {
-    font-family: Mont;
-    font-size: 14px;
-    font-style: normal;
+  &__count {
+    color: #89939A; 
+    font-family: 'Mont', Helvetica, sans-serif;
+    font-size: 14px; 
     font-weight: 600;
     line-height: 21px;
-    color: #89939a;
-    margin-bottom: 40px;
   }
 
-  &__filter {
+  &__pagination {
     display: flex;
-    margin-bottom: 24px;
-    &-filter {
-      margin: 0;
-      width: 176px;
-      height: 59px;
-      margin-right: 8px;
-
-      &-name {
-        font-family: Mont;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        color: #89939a;
-      }
-    }
   }
-
-  &__catalog {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 16px;
-    row-gap: 40px;
-    margin-bottom: 40px;
-
-    @include for-tablet() {
-      & {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @include for-phone() {
-      & {
-        grid-template-columns: repeat(1, 1fr);
-      }
-    }
-  }
-
-  &__buttons {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    width: 248px;
-    margin-bottom: 80px;
-
-    &-center {
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
-      width: 152px;
-
-      &-page {
-        width: 32px;
-        text-align: center;
-      }
-    }
-  }
+  
 }
+ 

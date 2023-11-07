@@ -1,9 +1,9 @@
 import './Button.scss'; 
 
 type ButtonProps = {
-    type: 'color' | 'circle' | 'icon' | 'iconText';
+    type: 'color' | 'circle' | 'icon' | 'iconText' | 'submited';
     value?:string; 
-    icon?: 'increase' | 'decrease' | 'close' | 'remove' | 'back' | 'next' | 'chevron-up' | 'home';
+    icon?: 'increase' | 'decrease' | 'close' | 'remove' | 'back' | 'next' | 'chevron-up' | 'home' | 'is-fav' | 'get-fav';
     onClick?: ()=>void;
     className?: string;
     disabled?: boolean;
@@ -24,9 +24,8 @@ export const Button:React.FC<ButtonProps> = ({
                 e.preventDefault();
                 onClick();
             }
-        }}
-        disabled={disabled}
-        className={`${className ? className + ' ' : ''}button button--${type} ${icon ? `button--icon-${icon}` : ''}`} >
-            {['color', 'iconText'].includes(type) && value}    
+        }} 
+        className={`button button--${type} ${icon ? `button--icon-${icon}` : ''} ${className ? className : ''}`} >
+            {['color', 'iconText', 'submited'].includes(type) && value}    
         </button>);
 }

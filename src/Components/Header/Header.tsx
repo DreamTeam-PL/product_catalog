@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
 import { useTranslation } from 'react-i18next'
+import { useStorageContext } from '../../Context/StorageContext';
 
 export function Header() {
   const navigate = useNavigate()
@@ -12,6 +13,7 @@ export function Header() {
   const { t, i18n } = useTranslation()
   const location = useLocation()
   const currentPath = location.pathname
+  const { favourites, cart } = useStorageContext();
 
   const navigateTo = (path: string) => {
     navigate(path)
@@ -74,6 +76,7 @@ export function Header() {
               onClick={() => toggleMenu()}
             ></button>
           </div>
+
           <ul className='mobile-menu__list'>
             <li
               className={classNames('mobile-menu__item', {
@@ -108,6 +111,7 @@ export function Header() {
               {t('header.accessories')}
             </li>
           </ul>
+
           <div className='header-buttons__menu'>
             <button
               title='buttonHeart'
@@ -115,14 +119,23 @@ export function Header() {
                 button__isActive: currentPath === '/favourites',
               })}
               onClick={() => navigateTo('/favourites')}
-            ></button>
+            >{favourites.items.length !== 0 &&
+              <div className="button__count">
+                {favourites.items.length}
+              </div>}
+            </button>
+
             <button
               title='buttonCart'
               className={classNames('button-cart__menu', {
                 button__isActive: currentPath === '/cart',
               })}
               onClick={() => navigateTo('/cart')}
-            ></button>
+            >{cart.items.length !== 0 &&
+              <div className="button__count">
+                {cart.items.length}
+              </div>}
+            </button>
           </div>
         </div>
       )}
@@ -251,14 +264,23 @@ export function Header() {
                 button__isActive: currentPath === '/favourites',
               })}
               onClick={() => navigateTo('/favourites')}
-            ></button>
+            >{favourites.items.length !== 0 &&
+              <div className="button__count">
+                {favourites.items.length}
+              </div>}
+            </button>
+            
             <button
               title='buttonCart'
               className={classNames('button__cart', {
                 button__isActive: currentPath === '/cart',
               })}
               onClick={() => navigateTo('/cart')}
-            ></button>
+            >{cart.items.length !== 0 &&
+              <div className="button__count">
+                {cart.items.length}
+              </div>}
+            </button>
           </div>
         </>
       )}

@@ -1,3 +1,192 @@
+@import "../../Styles/mixins.scss";
+
+.hmm3 {
+  padding: 0 32px;
+  @include for-desktop() {
+    & {
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+  }
+}
+
+.products__line {
+  display: flex;
+}
+
+.products {
+  &__position {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 24px 0 40px 0;
+    &-icon {
+      margin: 0 8px;
+      width: 16px;
+    }
+
+    &-name {
+      font-family: Mont;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      color: #89939a;
+      width: 45px;
+    }
+  }
+}
+
+.phone__name {
+  flex: 1;
+}
+
+.back {
+  align-items: center;
+  margin: 0 0 16px 0;
+  display: flex;
+  width: 66px;
+  height: 16px;
+}
+
+.back__writing {
+  align-items: baseline;
+  font-family: Mont;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: #89939a;
+}
+
+.back__left {
+  margin-left: 0;
+}
+
+//phones
+
+.phones {
+  display: flex;
+  margin-bottom: 80px;
+
+  @include for-phone() {
+    display: block;
+  }
+
+  &__left,
+  &__right {
+    flex: 1;
+    margin-right: 64px;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-photos {
+      flex: 1;
+      order: 1; /* Kolejność w domyślnym widoku */
+      width: 80px;
+      height: 464px;
+      margin: 0;
+
+      &-frame {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 16px;
+
+        @include for-tablet() {
+          width: 35px;
+          height: 35px;
+          margin-bottom: 9px;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-photo {
+      flex: 1;
+      order: 2; /* Kolejność w domyślnym widoku */
+      width: 464px;
+      height: 464px;
+      margin: 0 0 16px 0;
+
+      @include for-tablet() {
+        width: 287px;
+        height: 287px;
+      }
+    }
+
+    @include for-phone() {
+      display: flex;
+      flex-direction: column;
+      &-photos {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        order: 2; /* Kolejność w widoku na telefonie */
+      }
+
+      &-photo {
+        width: 100%;
+        order: 1; /* Kolejność w widoku na telefonie */
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 0;
+    margin-left: 0;
+
+    &-details {
+      margin-left: 0px;
+      width: 320px;
+    }
+
+    &-id {
+      margin-right: 0;
+      // width: 176px;
+
+      &-number {
+        font-family: Mont;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-align: right;
+        color: #b4bdc3;
+      }
+    }
+  }
+}
+
+.phones2 {
+  display: flex;
+  justify-content: space-between;
+
+  @include for-tablet() {
+    display: block;
+  }
+}
+.description__left,
+.description__right {
+  flex: 1;
+  margin-right: 64px;
+}
+
+.description__right {
+  flex: 1;
+  margin-right: 0;
+}
+
+//przerwa
 .phone__info {
   &-title {
     font-family: "Mont", sans-serif;
@@ -184,7 +373,6 @@
 
     &-subtitle {
       margin: 0;
-      display: inline-block;
       color: #0f0f11;
       font-family: Mont;
       font-size: 20px;

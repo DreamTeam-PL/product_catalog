@@ -34,7 +34,9 @@ export abstract class ProductService {
         return client.get<ListResult>(`/products/discount`);
     };
 
-
+    static getRecommended = () => {
+        return client.get<ListResult>(`/phones/recommended`);
+    };
 }
 
 // Add more methods here

@@ -3,72 +3,113 @@ import { Circle } from './Circle'
 import './phoneinfo.scss'
 import { Capacity } from './Capacity'
 import { FavIcon } from './favicon'
-import { Breadcrumbs } from '../Breadcrumbs/Breadcrumbs';
+import { Cards } from '../Cards/Cards'
+import '../../Pages/Catalog/catalog.scss'
 
 export const PhoneInfo: React.FC = () => {
-
   return (
+    <>
+    <div className="hmm3">
+      <div className="products__line">
+      <div className="products__position">
+          <div className="products__position-icon">
+              <img
+              className='img'
+              src={require('../../Pages/Catalog/home.png')}
+              alt="Home" />
+          </div>
+          <div className="products__position-icon">
+              <img
+              className='img'
+              src={require('../../Pages/Catalog/arrow right.png')}
+              alt="Right arrow direction" />
+          </div>
+          <p className="products__position-name">Phones</p>
+          <div className="products__position-icon">
+              <img
+              className='img'
+              src={require('../../Pages/Catalog/arrow right.png')}
+              alt="Right arrow direction" />
+          </div>
+          <div className='products__position-name phone__name'><p>Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)</p></div>
+      </div>
+      
+      </div>
+     <div className="back">
+      <div className="products__position-icon back__left">
+          <img
+          className='img'
+          src={require('../../Pages/Catalog/arrow left.png')}
+          alt="Left arrow direction" />
+      </div>
+      <p className='back__writing'>back</p>
+     </div>
+  
     <div className='phone__info'>
-      <Breadcrumbs />
       <h1 className='phone__info-title'>
         Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)
       </h1>
-      <div className='phone__info-container'>
-        <div className='phone__info-photo-container'>
-          <div className='phone__info-photo-content'>
-            <img
-              className='phone__info-phone-photo phone__infophone-photo-small'
-              src={require('../../Assets/Images/Iphone11.png')}
-              alt='Phone'
-            />
-          </div>
-          <div className='phone__info-photo-content'>
-            <img
-              className='phone__info-phone-photo phone__infophone-photo-small'
-              src={require('../../Assets/Images/Iphone11.png')}
-              alt='Phone'
-            />
-          </div>
-          <div className='phone__info-photo-content'>
-            <img
-              className='phone__info-phone-photo phone__infophone-photo-small'
-              src={require('../../Assets/Images/Iphone11.png')}
-              alt='Phone'
-            />
-          </div>
-          <div className='phone__info-photo-content'>
-            <img
-              className='phone__info-phone-photo phone__infophone-photo-small'
-              src={require('../../Assets/Images/Iphone11.png')}
-              alt='Phone'
-            />
-          </div>
-          <div className='phone__info-photo-content'>
-            <img
-              className='phone__info-phone-photo phone__infophone-photo-small'
-              src={require('../../Assets/Images/Iphone11.png')}
-              alt='Phone'
-            />
+
+
+  <section className='phones'>
+    <div className="phones__left">
+      <div className="phones__left-photos">
+        <div className="phones__left-photos-frame">
+        <img
+          className='phone__info-phone-photo phone__infophone-photo-small'
+          src={require('../../Assets/Images/Iphone11.png')}
+          alt='Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)'
+        />
+        </div>
+        <div className="phones__left-photos-frame">
+        <img
+          className='phone__info-phone-photo phone__infophone-photo-small'
+          src={require('../../Assets/Images/Iphone11.png')}
+          alt='Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)'
+        />
+        </div>
+        <div className="phones__left-photos-frame">
+        <img
+          className='phone__info-phone-photo phone__infophone-photo-small'
+          src={require('../../Assets/Images/Iphone11.png')}
+          alt='Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)'
+        />
+        </div>
+        <div className="phones__left-photos-frame">
+        <img
+          className='phone__info-phone-photo phone__infophone-photo-small'
+          src={require('../../Assets/Images/Iphone11.png')}
+          alt='Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)'
+        />
+        </div>
+        <div className="phones__left-photos-frame">
+        <img
+          className='phone__info-phone-photo phone__infophone-photo-small'
+          src={require('../../Assets/Images/Iphone11.png')}
+          alt='Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)'
+        />
+        </div>
+      </div>
+      <div className="phones__left-photo">
+      <img
+        className='phone-photo phone-photo-small'
+        src={require('../../Assets/Images/Iphone_11.png')}
+        alt='Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)'
+      />
+      </div>
+    </div>
+    <div className="phones__right">
+      <div className="phones__right-details">
+        <div className='phone__info-main-colors'>
+          <span className='phone__info-main-title'>Available colors</span>
+          <div className='phone__info-main-circles'>
+            <Circle fill='#FCDBC1' />
+            <Circle fill='#5F7170' />
+            <Circle fill='#4C4C4C' />
+            <Circle fill='#F0F0F0' />
           </div>
         </div>
-        <div>
-          <img
-            className='phone-photo phone-photo-small'
-            src={require('../../Assets/Images/Iphone_11.png')}
-            alt='Phone'
-          />
-        </div>
-        <div className='phone__info-main'>
-          <div className='phone__info-main-colors'>
-            <span className='phone__info-main-title'>Available colors</span>
-            <div className='phone__info-main-circles'>
-              <Circle fill='#FCDBC1' />
-              <Circle fill='#5F7170' />
-              <Circle fill='#4C4C4C' />
-              <Circle fill='#F0F0F0' />
-            </div>
-          </div>
-          <div className='phone__info-main-capacity'>
+        <div className='phone__info-main-capacity'>
             <span className='phone__info-main-title'>Select capacity</span>
             <div className='phone__info-main-memory'>
               <Capacity value='64GB' />
@@ -76,7 +117,6 @@ export const PhoneInfo: React.FC = () => {
               <Capacity value='256GB' />
             </div>
           </div>
-
           <div className='phone__info-main-price-container'>
             <span className='phone__info-main-price'>$799</span>
             <s>$1199</s>
@@ -105,14 +145,26 @@ export const PhoneInfo: React.FC = () => {
               <span className='phone__info-details-value'>3 GB</span>
             </div>
           </div>
-        </div>
-        <div>
-          <span className='phone__info-details-name'>ID: 802390</span>
-        </div>
+    </div>
+        
+
+
+      <div className="phones__right-id">
+        <p className="phones__right-id-number">ID: 802390</p>
       </div>
-      <div className='phone__info-description'>
-        <div className='phone__info-description-about'>
-          <h2 className='phone__info-description-title phone__info-description-title-about'>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <section className='phones2'>
+    <div className="description__left">
+    <h2 className='phone__info-description-title phone__info-description-title-about'>
             About
           </h2>
           <h3 className='phone__info-description-subtitle'>
@@ -147,9 +199,9 @@ export const PhoneInfo: React.FC = () => {
             control, too, with four times more scene and powerful new editing
             tools to play with.
           </p>
-        </div>
-        <div className='phone__info-description-name'>
-          <h2 className='phone__info-description-title phone__info-description-title-tech'>
+    </div>
+    <div className="description__right">
+    <h2 className='phone__info-description-title phone__info-description-title-tech'>
             Tech specs
           </h2>
 
@@ -197,8 +249,18 @@ export const PhoneInfo: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
     </div>
+  </section>
+
+</div>
+
+
+
+      
+      
+      </div>
+      <Cards type={'newest'} />
+
+      </>
   )
 }

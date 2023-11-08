@@ -38,11 +38,9 @@
     overflow-x: hidden;
     overflow-y: hidden;
 
-    &::after {
+    &:after {
       content: url('dot1.svg');
-      position: absolute;
-      left: 0;
-      right: 0;
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -50,7 +48,7 @@
 
     @for $i from 1 through 3 {
       &--active-#{$i} {
-        &::after {
+        &:after {
           content: url('dot#{$i}.svg');
         }
       }

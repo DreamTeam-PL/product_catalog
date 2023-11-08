@@ -1,15 +1,22 @@
-import { Categories } from "../Components/Categories/Categories";
-import { Slider } from "../Components/Slider/Slider";
-import { Cards } from "../Components/Cards/Cards";
+import { Categories } from '../Components/Categories/Categories'
+import { Slider } from '../Components/Slider/Slider'
+import { useTranslation } from 'react-i18next'
+import { Cards } from '../Components/Cards/Cards'
 
-import './Home.scss';
+import './Home.scss'
 
-export const Home:React.FC = () => (<section className="content landing">
-    <h1 className="landing__title">Welcome to Nice Gadgets store!</h1>
-    <main className="main">
+export const Home: React.FC = () => {
+  const { t } = useTranslation()
+
+  return (
+    <section className='content landing'>
+      <h1 className='landing__title'>{t('home.welcome')}</h1>
+      <main className='main'>
         <Slider />
-        <Cards type="newest" />
+        <Cards type='newest' />
         <Categories />
-        <Cards type="discount"/>
-    </main>
-</section>) 
+        <Cards type='discount' />
+      </main>
+    </section>
+  )
+}

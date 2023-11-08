@@ -6,6 +6,7 @@
     cursor: pointer;
     font-size: 14px;   
     user-select: none;
+    padding: 5px;
     
     &--iconText {
         color: rgba(0,0,0,1);
@@ -45,6 +46,32 @@
         &-chevron-up {
             &::before {
                 content: url('./chevron-up.svg');   
+            }
+        }
+
+        &-chevron-left {
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: url('./chevron-up.svg');   
+                display: block;
+                top: 50%;
+                left: 50%;
+                transform: rotate(-90deg) translate(50%, -30%); 
+            }
+        }
+
+        &-chevron-right {
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: url('./chevron-up.svg');   
+                display: block;
+                top: 50%;
+                left: 50%;
+                transform: rotate(90deg) translate(-50%, 50%); 
             }
         }
 

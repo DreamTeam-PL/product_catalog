@@ -7,8 +7,12 @@ export const Favourites: React.FC = () => {
     const { favourites } = useStorageContext();
 
     return (
-        <section className="hmm products">
-            <Breadcrumbs />
+        <section className="catalog">
+
+            <Breadcrumbs 
+                className="catalog__breadcrumb"
+            />
+
             <h1 className="products__title">Favourites</h1>
             <p className="products__quantity"><span>{favourites.items.length}</span> models</p>
                 {!favourites.items.length

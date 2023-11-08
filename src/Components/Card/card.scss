@@ -12,6 +12,7 @@
   justify-content: space-between;
   font-family: 'Mont', Helvetica, sans-serif;
   gap: 8px;
+  overflow: hidden;
 
   &__image { 
     display: block;  
@@ -91,7 +92,6 @@
   }
 
   &__submit { 
-    width: 173px;
-  }
-
+    flex: 1 1 auto;
+  } 
 }

@@ -10,7 +10,7 @@ export const Home: React.FC = () => {
 
   return (
     <section className='content landing'>
-      <h1 className='landing__title'>{t('home.welcome')}</h1>
+      <h1 className='landing__title'>xds</h1>
       <main className='main'>
         <Slider />
         <Cards type='newest' />

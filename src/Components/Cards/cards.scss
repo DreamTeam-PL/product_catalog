@@ -1,43 +1,74 @@
-@import "../../Styles/mixins.scss";
+.cardsWidget {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1200px; 
+  padding-left: 16px; 
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
 
-.hmm2 {
-  margin: 0 152px;
-
-  @include for-desktop() {
-    & {
-      margin: 0 32px;
-    }
+  @media (min-width: 640px) {
+    padding-left:24px;
   }
-}
 
-.title {
-  font-family: Mont;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 41px;
-  letter-spacing: -0.32px;
-  margin: 0 0 24px 0;
+  @media(min-width: 1200px) {
+    padding: 0 24px;
+  }
 
-  @include for-phone() {
-    & {
-      font-size: 22px;
+  &__header { 
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+  }
+
+  &__title { 
+    flex: 1 1 auto;
+    color: #0F0F11;
+    font-family: 'Mont', Helvetica, sans-serif;    
+    font-size: 22px; 
+    font-weight: 800;
+    line-height: 140%; 
+
+    @media(min-width: 640px) {
+      font-size: 32px;
       font-weight: 800;
-      line-height: 140%;
-      width: 136px;
+      line-height: 41px;
+      letter-spacing: -0.32px;
+    }
+
+  } 
+
+
+  &__products {
+    width: 100vw; 
+    max-width: 1200px;
+    overflow: hidden;
+  }
+
+  &__actions { 
+    display: flex;
+    gap: 16px;
+    padding-right: 16px;
+
+    @media(min-width: 640px) {
+      padding-right: 24px;
     }
   }
-}
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  &__grid {
+    display: grid; 
+    grid-template-columns: repeat(4, 212px);
 
-  @include for-tablet() {
-    & {
-      grid-template-columns: repeat(4, 1fr);
-      overflow: hidden;
+    @media(min-width: 640px) {
+      grid-template-columns: repeat(4, 237px);
     }
+
+    @media(min-width: 1200px) {
+      grid-template-columns: repeat(4, 272px);
+    }
+
+    gap: 16px;
   }
+
 }

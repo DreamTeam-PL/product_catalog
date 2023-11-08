@@ -5,7 +5,7 @@
   margin: auto auto;
   max-width: 1200px; 
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   gap: 40px;
   padding: 24px 16px;
 
@@ -15,30 +15,12 @@
 
   @media(min-width: 1200px) {
     padding: 32px;
-  }
+  } 
 
-  &__path {
-    display: grid;
-    grid-template-columns: 32px auto;
+  &__breadcrumb {
+    margin-left: 0;
   }
-
-  &__pathName {
-    color: #89939A;
-    font-family: 'Mont', Helvetica, sans-serif;
-    font-size: 12px;  
-    display: flex;
-    align-items: center; 
-    font-weight: 600; 
-  }
-
-  &__pathIcon { 
-    position: relative;    
-
-    &::after {
-      content: url('./arrow right.png'); 
-      position: absolute;
-    }
-  }
+ 
 
   &__title {
     color: #0F0F11; 

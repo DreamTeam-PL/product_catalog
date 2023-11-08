@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkproduct_catalog=self.webpackChunkproduct_catalog||[]).push([[507],{507:function(a,t,c){a.exports=c.p+"static/media/next-disabled.474a52a363ff8d274618.svg"}}]);

@@ -87,6 +87,7 @@ import { DropDownSelect } from "../../Components/DropDownSelect/DropDownSelect";
 import { ProductCatalog } from "../../Components/ProductCatalog/ProductCatalog";
 import { useCatalog } from "./useCatalog";
 import { PER_PAGE_OPTIONS, SORT_TYPES } from "../../utils/Constants";
+import { Loader } from "../../Components/Loader/Loader";
 
 
 export const Catalog:React.FC = () => {
@@ -105,7 +106,7 @@ export const Catalog:React.FC = () => {
 
         <Breadcrumbs />
 
-        {!products && <p>Waiting for data from server...</p>}
+        {!products && <Loader />}
 
         {products && products.length === 0 && <p>There is no products for you..</p>}
 
@@ -127,12 +128,13 @@ export const Catalog:React.FC = () => {
             ]}
         />)}
          
-        <section className="catalog__pagination">
-           <Pagination 
-                itemsPerPage={limit}
-                totalAmount={Number(resultCount)}
-           /> 
-        </section>
+        {products && 
+            (<section className="catalog__pagination">
+                <Pagination 
+                        itemsPerPage={limit}
+                        totalAmount={Number(resultCount)}
+                /> 
+            </section>)}
     
     </section>
 )}

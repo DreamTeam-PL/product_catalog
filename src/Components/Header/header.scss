@@ -1,5 +1,5 @@
-@import "../../Styles/mixins.scss";
-@import "../../Styles/fonts.scss";
+@import '../../Styles/mixins.scss';
+@import '../../Styles/fonts.scss';
 
 .header {
   height: 64px;
@@ -8,7 +8,7 @@
   font-size: 11px;
   font-weight: bold;
   text-decoration: none;
-  border-bottom: 2px solid #E2E6E9;
+  border-bottom: 2px solid #e2e6e9;
   box-sizing: border-box;
 
   @include for-tablet() {
@@ -57,17 +57,17 @@
       height: 100%;
       padding: 8px 0px;
       cursor: pointer;
-      color: #89939A;
+      color: #89939a;
     }
 
     .nav__item:hover {
-      border-bottom: 3px solid #0F0F11;
-      color: #0F0F11;
+      border-bottom: 3px solid #0f0f11;
+      color: #0f0f11;
     }
 
     .nav-item__isActive {
-      border-bottom: 3px solid #0F0F11;
-      color: #0F0F11;
+      border-bottom: 3px solid #0f0f11;
+      color: #0f0f11;
     }
   }
 
@@ -83,7 +83,7 @@
       background-repeat: no-repeat;
       background-color: white;
       border: none;
-      border-left: 2px solid #E2E6E9;
+      border-left: 2px solid #e2e6e9;
       width: 64px;
       height: 100%;
       padding: 0;
@@ -104,7 +104,7 @@
       background-repeat: no-repeat;
       background-color: white;
       border: none;
-      border-left: 2px solid #E2E6E9;
+      border-left: 2px solid #e2e6e9;
       width: 64px;
       height: 100%;
       box-sizing: border-box;
@@ -119,8 +119,8 @@
     }
 
     .button__isActive {
-      border-bottom: 3px solid #0F0F11;
-      color: #0F0F11;
+      border-bottom: 3px solid #0f0f11;
+      color: #0f0f11;
     }
 
     .button__count {
@@ -146,7 +146,7 @@
     background-repeat: no-repeat;
     background-color: white;
     width: 46px;
-    border-left: 2px solid #E2E6E9;
+    border-left: 2px solid #e2e6e9;
   }
 
   .mobile-menu {
@@ -171,7 +171,7 @@
     &__item {
       cursor: pointer;
       padding: 1rem;
-      color: #89939A;
+      color: #89939a;
       font-family: Mont;
       font-size: 12px;
       font-style: normal;
@@ -183,8 +183,8 @@
     }
 
     .menu-item__isActive {
-      border-bottom: 3px solid #0F0F11;
-      color: #0F0F11;
+      border-bottom: 3px solid #0f0f11;
+      color: #0f0f11;
     }
   }
 
@@ -200,7 +200,7 @@
     font-size: 11px;
     font-weight: bold;
     text-decoration: none;
-    border-bottom: 2px solid #E2E6E9;
+    border-bottom: 2px solid #e2e6e9;
     box-sizing: border-box;
   }
 
@@ -213,7 +213,7 @@
     background-position: 50%;
     background-repeat: no-repeat;
     background-color: white;
-    border-left: 2px solid #E2E6E9;
+    border-left: 2px solid #e2e6e9;
     width: 48px;
   }
 
@@ -233,9 +233,8 @@
       background-position: 50%;
       background-repeat: no-repeat;
       background-color: white;
-      border-top: 2px solid #E2E6E9;
-      border-right: 2px solid #E2E6E9;
-
+      border-top: 2px solid #e2e6e9;
+      border-right: 2px solid #e2e6e9;
     }
 
     .button-cart__menu {
@@ -244,12 +243,12 @@
       background-position: 50%;
       background-repeat: no-repeat;
       background-color: white;
-      border-top: 2px solid #E2E6E9;
+      border-top: 2px solid #e2e6e9;
     }
 
     .button__isActive {
-      border-bottom: 3px solid #0F0F11;
-      color: #0F0F11;
+      border-bottom: 3px solid #0f0f11;
+      color: #0f0f11;
     }
 
     .button__count {
@@ -265,4 +264,72 @@
       align-items: center;
     }
   }
+}
+
+.language-dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+.language-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.language-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fdfdfd;
+  list-style: none;
+  border: 1px solid rgb(178, 178, 178);
+  padding: 0;
+  margin: 0;
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: Mont;
+  font-size: 12px;
+  width: 100px;
+  text-align: right;
+}
+
+.language-menu li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  font-family: Mont;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.open .language-menu {
+  display: flex;
+}
+
+.language-button img {
+  margin-right: 5px;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.language-menu img {
+  margin-right: 10px;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
 }

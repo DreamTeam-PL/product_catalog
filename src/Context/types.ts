@@ -6,6 +6,7 @@ export type CartStorageValues = {
     remove: (itemId:number) => void;
     increase: (itemId:number) => void;
     decrease: (itemId:number) => void;
+    includes: (itemId:number) => boolean;
     totalCost: number;
     totalCount: number;
 };

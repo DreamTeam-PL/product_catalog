@@ -122,6 +122,18 @@
       border-bottom: 3px solid #0F0F11;
       color: #0F0F11;
     }
+
+    .button__count {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background-color: #4219D0;
+      border: 2px solid white;
+      color: white;
+      font-size: 9px;
+      margin-left: 50%;
+      margin-top: -25%;
+    }
   }
 
   .burger__icon {
@@ -238,6 +250,19 @@
     .button__isActive {
       border-bottom: 3px solid #0F0F11;
       color: #0F0F11;
+    }
+
+    .button__count {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background-color: #4219D0;
+      border: 2px solid white;
+      color: white;
+      font-size: 9px;
+      margin-left: 50%;
+      margin-top: -5%;
+      align-items: center;
     }
   }
 }

@@ -8,6 +8,7 @@ import '../../Pages/Catalog/catalog.scss'
 import { ProductService } from '../../Api/Products'
 import { Link, useParams } from 'react-router-dom'
 import { PhoneDetails } from '../../types/types'
+import { Breadcrumbs } from '../Breadcrumbs/Breadcrumbs';
 
 
 export const PhoneInfo: React.FC = () => {
@@ -92,31 +93,7 @@ export const PhoneInfo: React.FC = () => {
       <div className='hmm3'>
         <div className='products__line'>
           <div className='products__position'>
-            <div className='products__position-icon'>
-              <img
-                className='img'
-                src={require('../../Pages/Catalog/home.png')}
-                alt='Home'
-              />
-            </div>
-            <div className='products__position-icon'>
-              <img
-                className='img'
-                src={require('../../Pages/Catalog/arrow right.png')}
-                alt='Right arrow direction'
-              />
-            </div>
-            <p className='products__position-name'>Phones</p>
-            <div className='products__position-icon'>
-              <img
-                className='img'
-                src={require('../../Pages/Catalog/arrow right.png')}
-                alt='Right arrow direction'
-              />
-            </div>
-            <div className='products__position-name phone__name'>
-              <p>{productData.name}</p>
-            </div>
+            <Breadcrumbs />
           </div>
         </div>
         <div className='back'>

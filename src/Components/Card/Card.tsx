@@ -19,62 +19,57 @@ export const Card: React.FC<Props> = ({
   const { cart, favourites } = useStorageContext()
 
   return (
-    <article className={`ProductCard ${className}`}>
-      <Link
-        to={`/phones/${item.phoneId}`}
-        style={{ textDecoration: 'none', color: 'inherit' }}
-      >
-        <img
-          className='ProductCard__image'
-          src={`https://phone-api-l15u.onrender.com/${item.image}`}
-          alt={item.name}
+    <Link to={`/phones/${item.phoneId}`} className={`ProductCard ${className}`}>
+      <img
+        className='ProductCard__image'
+        src={`https://phone-api-l15u.onrender.com/${item.image}`}
+        alt={item.name}
+      />
+
+      <h3 className='ProductCard__title'>{item.name}</h3>
+
+      <section className='ProductCard__price'>
+        <span className='ProductCard__price-discount'>{item.price}</span>
+        {showDiscount && (
+          <span className='ProductCard__price-full'>{item.fullPrice}</span>
+        )}
+      </section>
+
+      <hr className='ProductCard__line' />
+
+      <section className='ProductCard__info'>
+        <article className='ProductCard__infoColumn'>
+          <span className='ProductCard__infoLabel'>Screen</span>
+          <span className='ProductCard__infoValue'>{item.screen}</span>
+        </article>
+        <article className='ProductCard__infoColumn'>
+          <span className='ProductCard__infoLabel'>Capacity</span>
+          <span className='ProductCard__infoValue'>{item.capacity}</span>
+        </article>
+
+        <article className='ProductCard__infoColumn'>
+          <span className='ProductCard__infoLabel'>RAM</span>
+          <span className='ProductCard__infoValue'>{item.ram}</span>
+        </article>
+      </section>
+      <section className='ProductCard__actions'>
+        <Button
+          type={!cart.includes(item.id) ? 'color' : 'submited'}
+          value={!cart.includes(item.id) ? 'Add to cart' : 'Added to cart'}
+          className='ProductCard__submit'
+          onClick={() => !cart.includes(item.id) && cart.add(item)}
         />
 
-        <h3 className='ProductCard__title'>{item.name}</h3>
-
-        <section className='ProductCard__price'>
-          <span className='ProductCard__price-discount'>{item.price}</span>
-          {showDiscount && (
-            <span className='ProductCard__price-full'>{item.fullPrice}</span>
-          )}
-        </section>
-
-        <hr className='ProductCard__line' />
-
-        <section className='ProductCard__info'>
-          <article className='ProductCard__infoColumn'>
-            <span className='ProductCard__infoLabel'>Screen</span>
-            <span className='ProductCard__infoValue'>{item.screen}</span>
-          </article>
-          <article className='ProductCard__infoColumn'>
-            <span className='ProductCard__infoLabel'>Capacity</span>
-            <span className='ProductCard__infoValue'>{item.capacity}</span>
-          </article>
-
-          <article className='ProductCard__infoColumn'>
-            <span className='ProductCard__infoLabel'>RAM</span>
-            <span className='ProductCard__infoValue'>{item.ram}</span>
-          </article>
-        </section>
-        <section className='ProductCard__actions'>
-          <Button
-            type={!cart.includes(item.id) ? 'color' : 'submited'}
-            value={!cart.includes(item.id) ? 'Add to cart' : 'Added to cart'}
-            className='ProductCard__submit'
-            onClick={() => !cart.includes(item.id) && cart.add(item)}
-          />
-
-          <Button
-            type='circle'
-            icon={favourites.includes(item.id) ? 'is-fav' : 'get-fav'}
-            onClick={() =>
-              !favourites.includes(item.id)
-                ? favourites.add(item)
-                : favourites.remove(item.id)
-            }
-          />
-        </section>
-      </Link>
-    </article>
+        <Button
+          type='circle'
+          icon={favourites.includes(item.id) ? 'is-fav' : 'get-fav'}
+          onClick={() =>
+            !favourites.includes(item.id)
+              ? favourites.add(item)
+              : favourites.remove(item.id)
+          }
+        />
+      </section>
+    </Link> 
   )
 }

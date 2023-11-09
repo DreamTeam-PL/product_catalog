@@ -4,13 +4,11 @@
   margin: 0;
   gap: 8px;
   height: 16px;
-  font-family: Mont;
+  font-family: 'Mont', Helvetica, sans-serif;
   text-transform: capitalize;
   color: #0F0F11;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+  font-size: 12px; 
+  font-weight: 700;  
 
   &__link {
     all: unset;

@@ -8,12 +8,13 @@ type getProductsOpts = {
   order?: string
 }
 
-type ListResult = {
-  count: number
-  currentPage: number
-  data: Product[]
-  itemsPerPage: number
-  pages: number
+export type ListResult = {
+    count: number;
+    currentPage: number;
+    data: Product[];
+    itemsPerPage: number;
+    pages: number;
+
 }
 
 export abstract class ProductService {

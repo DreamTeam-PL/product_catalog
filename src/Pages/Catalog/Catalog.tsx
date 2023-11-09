@@ -1,12 +1,8 @@
 import { Button } from '../../Components/Button/Button'
 import { Card } from '../../Components/Card/Card'
 import { Pagination } from '../../Components/Pagination/Pagination'
-import { ProductService } from '../../Api/Products'
 import './catalog.scss'
-import { useEffect, useState } from 'react'
-import { Product } from '../../types/types'
 import { Breadcrumbs } from '../../Components/Breadcrumbs/Breadcrumbs'
-import { DropDownSelect } from '../../Components/DropDownSelect/DropDownSelect'
 import { ProductCatalog } from '../../Components/ProductCatalog/ProductCatalog'
 import { useCatalog } from './useCatalog'
 import { PER_PAGE_OPTIONS, SORT_TYPES } from '../../utils/Constants'
@@ -18,7 +14,15 @@ export const Catalog: React.FC = () => {
 
   return (
     <section className='catalog'>
-      <Breadcrumbs />
+      <Breadcrumbs 
+        className="catalog__breadcrumb"
+      />
+
+
+      <section>
+        <h1 className="catalog__title">Mobile phones</h1>
+        <p className="catalog__count">{resultCount} models</p>
+      </section>
 
       {!products && <Loader />}
 

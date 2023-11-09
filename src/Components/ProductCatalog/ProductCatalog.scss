@@ -6,10 +6,8 @@
     &__filters {   
         display: grid; 
         grid-template-columns: repeat(2, 136px);
-        align-self: center;
 
-        @media(min-width: 640px) { 
-            align-self: start;
+        @media(min-width: 640px) {
             grid-template-columns: repeat(2, 187px);
         }
 
@@ -33,5 +31,17 @@
             flex-direction: row;
         }
 
+    }
+
+    &__card {
+        max-width: 287px;
+
+        @media(min-width: 768px) {
+            max-width: 230px;
+        }
+
+        @media(min-width: 1200px) {
+            max-width: 272px;
+        }
     }
 }

@@ -1,26 +1,56 @@
-import React, { useEffect, useState } from 'react';
 import './cards.scss';
-import { Card } from "../Card/Card";
-import { ProductService } from '../../Api/Products';
-import { Product } from '../../types/types';
+import { Card } from "../Card/Card"; 
+import { Button } from '../Button/Button';
+import { useCardsWidget } from './useCardsWidget'; 
+import { ListResult } from '../../Api/Products';
 
 type CardsProps = { 
-  type: 'newest' | 'discount';
+  title: string; 
+  requestServer: () => Promise<ListResult>;
+  showDiscount?: boolean;
 }
 
-export const Cards: React.FC<CardsProps> = ({ type }) => {
-  const [catalogItems, setCatalogItems] = useState<Product[]>([]);
+export const CardsWidget: React.FC<CardsProps> = ({ title, requestServer, showDiscount=false }) => {
+  const {
+    grid, 
+    cards, 
+    onScroll,
+    isNextDisabled,
+    isPreviousDisabled,
+  } = useCardsWidget(requestServer);
 
-  useEffect(() => {
-    ((type === 'newest') ? ProductService.getNewest() : ProductService.getDiscounted()).then(result => setCatalogItems(result.data));
-  }, [type]);
-  
   return (
-    <div className='hmm2'>
-      <p className="title">{type === 'newest' ? 'Brand new models' : 'Hot prices'}</p>
-      <div className='cards'>
-        {catalogItems.map(product => <Card key={product.id} item={product}/>)}
-      </div>
-    </div>
+    <section className='cardsWidget'>
+      <section className='cardsWidget__header'>
+        <p className="cardsWidget__title">{title}</p>
+        <div className="cardsWidget__actions">
+          <Button 
+            type="circle"
+            icon="chevron-left"
+            disabled={isPreviousDisabled}
+            onClick={() => onScroll('left')}
+          />
+          <Button 
+            type="circle"
+            icon="chevron-right"
+            disabled={isNextDisabled}
+            onClick={() => onScroll('right')}
+          />
+        </div>
+      </section>
+      <main className={`cardsWidget__products${!isPreviousDisabled ? ' cardsWidget__products--pushedLeft' : ''}${!isPreviousDisabled ? ' cardsWidget__products--pushedRight' : ''}`}>
+        <div className='cardsWidget__grid'
+          ref={grid}
+          style={{ transition: 'transform 0.3s ease' }}
+        >
+          {cards.map(product => <Card 
+            key={product.id}
+            className="cardsWidget__card"
+            item={product}
+            showDiscount={showDiscount}
+          />)} 
+        </div>
+      </main>
+    </section>
   );
 };

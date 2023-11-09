@@ -43,6 +43,10 @@ export abstract class ProductService {
   static getPhoneById = async (productId: string) => {
     return await client.get<PhoneDetails>(`/products/${productId}`)
   }
+
+  static getPhoneByIdWithoutDetails = async (productId: string) => {
+    return await client.get<Product>(`/products/${productId}`)
+  }
 }
 
 // Add more methods here

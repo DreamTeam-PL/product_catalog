@@ -2,22 +2,25 @@ import React, { useEffect, useState } from 'react'
 import { Circle } from './Circle'
 import './phoneinfo.scss'
 import { Capacity } from './Capacity'
-// import { FavIcon } from './favicon'
 import { CardsWidget } from '../Cards/Cards'
 import '../../Pages/Catalog/catalog.scss'
 import { ProductService } from '../../Api/Products'
 import { Link, useParams } from 'react-router-dom'
 
 import { PhoneDetails, Product } from '../../types/types'
-import { Breadcrumbs } from '../Breadcrumbs/Breadcrumbs';
+import { Breadcrumbs } from '../Breadcrumbs/Breadcrumbs'
 import { useStorageContext } from '../../Context/StorageContext'
 import { Button } from '../Button/Button'
 
 export const PhoneInfo: React.FC = () => {
   const { productSlug } = useParams<{ productSlug: string }>()
   const [productData, setProductData] = useState<PhoneDetails | null>(null)
-  const [productDataWithoutDetails, setProductDataWithoutDetails] = useState<Product>()
+  const [productDataWithoutDetails, setProductDataWithoutDetails] =
+    useState<Product>()
   const [selectedImageIndex, setSelectedImageIndex] = useState(0)
+  const [activeColor, setActiveColor] = useState<string | null>(null)
+  const [activeCapacity, setActiveCapacity] = useState('')
+
   const { cart, favourites } = useStorageContext()
 
   const colorMap: { [key: string]: string } = {
@@ -27,7 +30,7 @@ export const PhoneInfo: React.FC = () => {
     silver: '#C0C0C0',
     midnightgreen: '#004953',
     spacegray: '#4B6382',
-    white: '#FFFFFF',
+    white: '#F5F5DC',
     yellow: '#F4BA47',
     red: '#EB5757',
     coral: '#FF6F61',
@@ -76,8 +79,9 @@ export const PhoneInfo: React.FC = () => {
         if (productSlug) {
           const product = await ProductService.getPhoneById(productSlug)
           setProductData(product)
-          const productWithoutDetails = await ProductService.getPhoneByIdWithoutDetails(productSlug);
-          setProductDataWithoutDetails(productWithoutDetails);
+          const productWithoutDetails =
+            await ProductService.getPhoneByIdWithoutDetails(productSlug)
+          setProductDataWithoutDetails(productWithoutDetails)
         }
       } catch (error) {
         console.error('Błąd podczas pobierania danych:', error)
@@ -155,7 +159,12 @@ export const PhoneInfo: React.FC = () => {
                         to={`/phones/${slugWithoutColor}-${color}  `}
                         style={{ textDecoration: 'none' }}
                       >
-                        <Circle fill={colorMap[color] || '#000000'} />{' '}
+                        <Circle
+                          fill={colorMap[color] || '#000000'}
+                          color={color}
+                          activeColor={activeColor}
+                          setActiveColor={setActiveColor}
+                        />
                       </Link>
                     ))}
                   </div>
@@ -176,7 +185,11 @@ export const PhoneInfo: React.FC = () => {
                           to={`/phones/${newSlug}`}
                           style={{ textDecoration: 'none' }}
                         >
-                          <Capacity value={capacity} />
+                          <Capacity
+                            value={capacity}
+                            isActive={capacity === activeCapacity}
+                            onClick={() => setActiveCapacity(capacity)}
+                          />
                         </Link>
                       )
                     })}
@@ -185,34 +198,50 @@ export const PhoneInfo: React.FC = () => {
                 <div className='phone__info-main-price-container'>
                   <span className='phone__info-main-price'>
                     ${productData.priceDiscount}
-                  </span>{' '}
-                  <s>${productData.priceRegular}</s>
+                  </span>
+                  <s className='phone__info-main-oldprice'>
+                    ${productData.priceRegular}
+                  </s>
                   <div className='phone__info-price-cta'>
-                    {productDataWithoutDetails &&
+                    {productDataWithoutDetails && (
                       <>
                         <Button
                           className='phone__info-button'
-                          type={!cart.includes(productDataWithoutDetails.id) ? 'color' : 'submited'}
-                          value={!cart.includes(productDataWithoutDetails.id) ? 'Add to cart' : 'Added to cart'}
+                          type={
+                            !cart.includes(productDataWithoutDetails.id)
+                              ? 'color'
+                              : 'submited'
+                          }
+                          value={
+                            !cart.includes(productDataWithoutDetails.id)
+                              ? 'Add to cart'
+                              : 'Added to cart'
+                          }
                           onClick={() => {
                             if (!cart.includes(productDataWithoutDetails.id)) {
-                              cart.add(productDataWithoutDetails);
+                              cart.add(productDataWithoutDetails)
                             }
                           }}
                         />
 
                         <Button
                           type='circle'
-                          icon={favourites.includes(productDataWithoutDetails.id) ? 'is-fav' : 'get-fav'}
+                          icon={
+                            favourites.includes(productDataWithoutDetails.id)
+                              ? 'is-fav'
+                              : 'get-fav'
+                          }
                           className='phone__info-button--fav'
                           onClick={() =>
-                            (!favourites.includes(productDataWithoutDetails.id) && productDataWithoutDetails)
+                            !favourites.includes(
+                              productDataWithoutDetails.id
+                            ) && productDataWithoutDetails
                               ? favourites.add(productDataWithoutDetails)
                               : favourites.remove(productDataWithoutDetails.id)
                           }
                         />
                       </>
-                    }
+                    )}
                   </div>
                 </div>
                 <div className='phone__info-details'>

@@ -6,12 +6,15 @@ import classNames from 'classnames';
 type CategoryProps = {
   title: string;
   productType: string
+  count: number
 }
 
 export const Category: React.FC<CategoryProps> = ({ 
   title,
-  productType
+  productType,
+  count,
  }) => {
+  
   return (
     <div className='category'>
       <Link to={`/${productType}`} className='category__link'>
@@ -30,7 +33,7 @@ export const Category: React.FC<CategoryProps> = ({
           </div>
         </div>
         <p className='category__title'>{title}</p>
-        <p className='category__count'>0 models</p>
+        <p className='category__count'>{`${count} models`}</p>
       </Link>
     </div>
   )

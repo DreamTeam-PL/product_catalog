@@ -1,9 +1,4 @@
 .slider {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  gap: 19px;
-  margin-bottom: 28px;
   padding: 0;
   transition: transform 0.5s ease-in-out;
 
@@ -15,42 +10,45 @@
     padding: 0 32px;
   }
 
-  @media (min-width: 1201px) {
-    padding: 0 152px;
-  }
-
   &__image {
-    width: 100%;
+    width: 1040px;
     max-width: 1040px;
-    max-height: 400px;
 
     @media (max-width: 639px) {
-      max-height: 639px;
+      width: 100vw;
+      max-width: 639px;
     }
 
-    @media (min-width: 640px) {
+    @media (max-width: 1200px) and (min-width: 640px) {
+      width: 100%;
       border-radius: 8px;
+      border: 5px soldi red;
     }
+  }
+
+  &__contener {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 19px;
   }
 
   &__main {
     position: relative;
     overflow-x: hidden;
     overflow-y: hidden;
+  }
 
-    &:after {
-      content: url('dot1.svg');
+  &__nav {
+    content: url("dot1.svg");
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @for $i from 1 through 3 {
       &--active-#{$i} {
-        &:after {
-          content: url('dot#{$i}.svg');
-        }
+        content: url("dot#{$i}.svg");
       }
     }
   }
@@ -67,14 +65,14 @@
 
     &--prev {
       &::after {
-        content: url('prev.svg');
+        content: url("prev.svg");
         width: 16px;
       }
     }
 
     &--next {
       &::after {
-        content: url('next.svg');
+        content: url("next.svg");
         width: 16px;
       }
     }

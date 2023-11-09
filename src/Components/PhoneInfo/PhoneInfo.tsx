@@ -6,15 +6,66 @@ import { FavIcon } from './favicon'
 import { Cards } from '../Cards/Cards'
 import '../../Pages/Catalog/catalog.scss'
 import { ProductService } from '../../Api/Products'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { PhoneDetails } from '../../types/types'
 
 export const PhoneInfo: React.FC = () => {
   const { productSlug } = useParams<{ productSlug: string }>()
   const [productData, setProductData] = useState<PhoneDetails | null>(null)
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0)
+
+  const colorMap: { [key: string]: string } = {
+    gold: '#FFD700',
+    gray: '#808080',
+    black: '#000000',
+    silver: '#C0C0C0',
+    midnightgreen: '#004953',
+    spacegray: '#4B6382',
+    white: '#FFFFFF',
+    yellow: '#F4BA47',
+    red: '#EB5757',
+    coral: '#FF6F61',
+    rosegold: '#B76E79',
+    purple: '#800080',
+    green: '#27AE60',
+  }
+
+  const extractSlugWithoutColor = (productSlug: string) => {
+    const parts = productSlug.split('-')
+    if (parts.length > 1) {
+      parts.pop()
+      return parts.join('-')
+    } else {
+      return productSlug
+    }
+  }
+
+  const slugWithoutColor = productSlug
+    ? extractSlugWithoutColor(productSlug)
+    : 'white'
+
+  const extractSlugWithoutCapacity = (productSlug: string) => {
+    const parts = productSlug.split('-')
+
+    for (let i = parts.length - 1; i >= 0; i--) {
+      if (isNaN(Number(parts[i]))) {
+        break
+      }
+      parts.pop()
+    }
+
+    return parts.join('-')
+  }
+
+  const slugWithoutCapacity = productSlug
+    ? extractSlugWithoutCapacity(productSlug)
+    : '64GB'
 
   useEffect(() => {
     const fetchProductData = async () => {
+      if (productSlug === undefined) {
+        return
+      }
       try {
         if (productSlug) {
           const product = await ProductService.getPhoneById(productSlug)
@@ -27,6 +78,10 @@ export const PhoneInfo: React.FC = () => {
 
     fetchProductData()
   }, [productSlug])
+
+  const changeSelectedImage = (index: number) => {
+    setSelectedImageIndex(index)
+  }
 
   if (!productData) {
     return <div>Loading...</div>
@@ -81,7 +136,11 @@ export const PhoneInfo: React.FC = () => {
             <div className='phones__left'>
               <div className='phones__left-photos'>
                 {productData.images.slice(1).map((image, index) => (
-                  <div className='phones__left-photos-frame' key={index}>
+                  <div
+                    className='phones__left-photos-frame'
+                    key={index}
+                    onClick={() => changeSelectedImage(index + 1)}
+                  >
                     <img
                       className='phone__info-phone-photo phone__infophone-photo-small'
                       src={`https://phone-api-l15u.onrender.com/${image}`}
@@ -93,7 +152,7 @@ export const PhoneInfo: React.FC = () => {
               <div className='phones__left-photo'>
                 <img
                   className='phone-photo phone-photo-small'
-                  src={`https://phone-api-l15u.onrender.com/${productData.images[0]}`}
+                  src={`https://phone-api-l15u.onrender.com/${productData.images[selectedImageIndex]}`}
                   alt={productData.name}
                 />
               </div>
@@ -107,7 +166,13 @@ export const PhoneInfo: React.FC = () => {
                   </span>
                   <div className='phone__info-main-circles'>
                     {productData.colorsAvailable.map((color, index) => (
-                      <Circle key={index} fill={color} />
+                      <Link
+                        key={index}
+                        to={`/phones/${slugWithoutColor}-${color}  `}
+                        style={{ textDecoration: 'none' }}
+                      >
+                        <Circle fill={colorMap[color] || '#000000'} />
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -117,14 +182,20 @@ export const PhoneInfo: React.FC = () => {
                   </span>
                   <div className='phone__info-main-memory'>
                     {productData.capacityAvailable.map((capacity, index) => (
-                      <Capacity key={index} value={capacity} />
+                      <Link
+                        key={index}
+                        to={`/phones/${slugWithoutCapacity}`}
+                        style={{ textDecoration: 'none' }}
+                      >
+                        <Capacity value={capacity} />
+                      </Link>
                     ))}
                   </div>
                 </div>
                 <div className='phone__info-main-price-container'>
                   <span className='phone__info-main-price'>
                     ${productData.priceDiscount}
-                  </span>
+                  </span>{' '}
                   <s>${productData.priceRegular}</s>
                   <div className='phone__info-price-cta'>
                     <a className='phone__info-button'>Add to cart </a>
@@ -191,45 +262,55 @@ export const PhoneInfo: React.FC = () => {
               <div className='phone__info-details'>
                 <div className='phone__info-details-container'>
                   <span className='phone__info-details-name2'>Screen</span>
-                  <span className='phone__info-details-value2'>6.5” OLED</span>
+                  <span className='phone__info-details-value2'>
+                    {productData.screen}
+                  </span>
                 </div>
                 <div className='phone__info-details-container'>
                   <span className='phone__info-details-name2'>Resolution</span>
-                  <span className='phone__info-details-value2'>2688x1242</span>
+                  <span className='phone__info-details-value2'>
+                    {productData.resolution}
+                  </span>
                 </div>
                 <div className='phone__info-details-container'>
                   <span className='phone__info-details-name2'>Processor</span>
                   <span className='phone__info-details-value2'>
-                    Apple A12 Bionic
+                    {productData.processor}
                   </span>
                 </div>
                 <div className='phone__info-details-container'>
                   <span className='phone__info-details-name2'>RAM</span>
-                  <span className='phone__info-details-value2'>3 GB</span>
+                  <span className='phone__info-details-value2'>
+                    {productData.ram}
+                  </span>
                 </div>
                 <div className='phone__info-details'>
                   <div className='phone__info-details-container'>
                     <span className='phone__info-details-name2'>
                       Built in memory
                     </span>
-                    <span className='phone__info-details-value2'>64 GB</span>
+                    <span className='phone__info-details-value2'>
+                      {productData.capacity}
+                    </span>
                   </div>
                   <div className='phone__info-details-container'>
                     <span className='phone__info-details-name'>Camera</span>
                     <span className='phone__info-details-value'>
-                      12 Mp + 12 Mp + 12 Mp (Triple)
+                      {productData.camera}
                     </span>
                   </div>
                   <div className='phone__info-details-container'>
                     <span className='phone__info-details-name'>Zoom</span>
                     <span className='phone__info-details-value'>
-                      Optical, 2x{' '}
+                      {productData.zoom}
                     </span>
                   </div>
                   <div className='phone__info-details-container'>
                     <span className='phone__info-details-name'>Cell</span>
                     <span className='phone__info-details-value'>
-                      GSM, LTE, UMTS
+                      <span className='phone__info-details-value'>
+                        {productData.cell.join(', ')}
+                      </span>
                     </span>
                   </div>
                 </div>

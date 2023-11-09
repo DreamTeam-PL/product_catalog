@@ -1,36 +1,35 @@
-@import "../../Styles/mixins.scss";
+@import '../../Styles/mixins.scss';
 
-.catalog { 
+.catalog {
   box-sizing: border-box;
   margin: auto auto;
-  max-width: 1200px; 
+  max-width: 1200px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   gap: 40px;
   padding: 24px 16px;
 
-  @media(min-width: 640px) {
+  @media (min-width: 640px) {
     padding: 24px;
   }
 
-  @media(min-width: 1200px) {
+  @media (min-width: 1200px) {
     padding: 32px;
-  } 
+  }
 
   &__breadcrumb {
     margin-left: 0;
   }
- 
 
   &__title {
-    color: #0F0F11; 
+    color: #0f0f11;
     font-family: 'Mont', Helvetica, sans-serif;
-    font-size: 32px; 
-    font-weight: 800;
-    line-height: 41px; 
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 41px;
     letter-spacing: -0.32px;
 
-    @media (min-width: 640px) { 
+    @media (min-width: 640px) {
       font-size: 48px;
       line-height: 56px;
       letter-spacing: -0.48px;
@@ -38,9 +37,9 @@
   }
 
   &__count {
-    color: #89939A; 
+    color: #89939a;
     font-family: 'Mont', Helvetica, sans-serif;
-    font-size: 14px; 
+    font-size: 14px;
     font-weight: 600;
     line-height: 21px;
   }
@@ -48,6 +47,4 @@
   &__pagination {
     display: flex;
   }
-  
 }
- 

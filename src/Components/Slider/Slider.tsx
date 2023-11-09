@@ -79,33 +79,36 @@ export const Slider: React.FC = () => {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      <a
-        className='slider__button slider__button--prev'
-        onClick={handlePrevClick}
-      ></a>
-      <main
-        className={`slider__main slider__main--active-${selected}${
-          isTransitioning ? ' transitioning' : ''
-        }`}
-      >
-        <Link to={`/phones/${selected}`}>
-          <picture className='slider__picture'>
-            <source
-              media='(max-width: 639px)'
-              srcSet={require(`./image_small${selected}.png`)}
-            />
-            <img
-              className='slider__image'
-              src={require(`./image_big${selected}.png`)}
-              alt={`img${selected}`}
-            />
-          </picture>
-        </Link>
-      </main>
-      <a
-        className='slider__button slider__button--next'
-        onClick={handleNextClick}
-      ></a>
+      <div className="slider__contener">
+        <a
+          className='slider__button slider__button--prev'
+          onClick={handlePrevClick}
+        ></a>
+        <main
+          className={`slider__main slider__main--active-${selected}${
+            isTransitioning ? ' transitioning' : ''
+          }`}
+        >
+          <Link to={`/phones/${selected}`}>
+            <picture className='slider__picture'>
+              <source
+                media='(max-width: 639px)'
+                srcSet={require(`./image_small${selected}.png`)}
+              />
+              <img
+                className='slider__image'
+                src={require(`./image_big${selected}.png`)}
+                alt={`img${selected}`}
+              />
+            </picture>
+          </Link>
+        </main>
+        <a
+          className='slider__button slider__button--next'
+          onClick={handleNextClick}
+        ></a>
+      </div>
+      <div className={`slider__nav slider__nav--active-${selected}`}></div>
     </section>
   )
 }

@@ -1,8 +1,8 @@
-import { FavouriteList } from "../../Components/FavouritesList/FavouritesList";
 import { useStorageContext } from "../../Context/StorageContext";
 import { Breadcrumbs } from "../../Components/Breadcrumbs/Breadcrumbs";
 
 import '../Catalog/catalog.scss';
+import { ProductCatalog } from "../../Components/ProductCatalog/ProductCatalog";
 export const Favourites: React.FC = () => {
     const { favourites } = useStorageContext();
 
@@ -13,12 +13,18 @@ export const Favourites: React.FC = () => {
                 className="catalog__breadcrumb"
             />
 
-            <h1 className="products__title">Favourites</h1>
-            <p className="products__quantity"><span>{favourites.items.length}</span> models</p>
-                {!favourites.items.length
-                    ? <span>Looks like you don't have any favorite products yet...</span>
-                    : <FavouriteList />
-                }
+            <section>
+                <h1 className="catalog__title">Favourites</h1>
+                <p className="catalog__count">{favourites.items.length} models</p>
+            </section>
+
+            {!favourites.items.length
+                ? <span>Looks like you don't have any favorite products yet...</span>
+                : <ProductCatalog
+                products={favourites.items}
+                filters={[]}
+              />
+            }
         </section>
     )
 

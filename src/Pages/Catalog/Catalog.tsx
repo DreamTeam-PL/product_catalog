@@ -16,6 +16,12 @@ export const Catalog: React.FC = () => {
         className="catalog__breadcrumb"
       />
 
+
+      <section>
+        <h1 className="catalog__title">Mobile phones</h1>
+        <p className="catalog__count">{resultCount} models</p>
+      </section>
+
       {!products && <Loader />}
 
       {products && products.length === 0 && (

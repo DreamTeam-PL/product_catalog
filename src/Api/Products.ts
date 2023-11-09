@@ -9,12 +9,11 @@ type getProductsOpts = {
 }
 
 export type ListResult = {
-    count: number;
-    currentPage: number;
-    data: Product[];
-    itemsPerPage: number;
-    pages: number;
-
+  count: number
+  currentPage: number
+  data: Product[]
+  itemsPerPage: number
+  pages: number
 }
 
 export abstract class ProductService {
@@ -37,8 +36,8 @@ export abstract class ProductService {
     return client.get<ListResult>(`/products/discount`)
   }
 
-  static getRecommended = () => {
-    return client.get<ListResult>(`/phones/recommended`)
+  static getRecommended = (productId: string) => {
+    return client.get<ListResult>(`/products/${productId}/recommended`)
   }
 
   static getPhoneById = async (productId: string) => {

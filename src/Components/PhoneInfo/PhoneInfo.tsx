@@ -327,7 +327,7 @@ export const PhoneInfo: React.FC = () => {
       </div>
       <CardsWidget
         title='Newest'
-        requestServer={ProductService.getRecommended}
+        requestServer={() => ProductService.getRecommended(productData.id)}
       />
     </>
   )

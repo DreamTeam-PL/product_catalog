@@ -7,37 +7,45 @@ import { Link } from 'react-router-dom'
 
 type Props = {
   item: Product
-  showDiscount?: boolean;
-  className?: string;
+  showDiscount?: boolean
+  className?: string
 }
 
-export const Card: React.FC<Props> = ({ item, showDiscount = false, className = '' }) => {
+export const Card: React.FC<Props> = ({
+  item,
+  showDiscount = false,
+  className = '',
+}) => {
   const { cart, favourites } = useStorageContext()
 
   return (
     <article className={`ProductCard ${className}`}>
-      <img
-        className='ProductCard__image'
-        src={`https://phone-api-l15u.onrender.com/${item.image}`}
-        alt={item.name}
-      />
+      <Link
+        to={`/phones/${item.phoneId}`}
+        style={{ textDecoration: 'none', color: 'inherit' }}
+      >
+        <img
+          className='ProductCard__image'
+          src={`https://phone-api-l15u.onrender.com/${item.image}`}
+          alt={item.name}
+        />
 
-      <h3 className='ProductCard__title'>{item.name}</h3>
+        <h3 className='ProductCard__title'>{item.name}</h3>
 
-      <section className='ProductCard__price'>
-        <span className='ProductCard__price-discount'>{item.price}</span>
-        {showDiscount && (
-          <span className='ProductCard__price-full'>{item.fullPrice}</span>
-        )}
-      </section>
+        <section className='ProductCard__price'>
+          <span className='ProductCard__price-discount'>{item.price}</span>
+          {showDiscount && (
+            <span className='ProductCard__price-full'>{item.fullPrice}</span>
+          )}
+        </section>
 
-      <hr className='ProductCard__line' />
+        <hr className='ProductCard__line' />
 
-      <section className='ProductCard__info'>
-        <article className='ProductCard__infoColumn'>
-          <span className='ProductCard__infoLabel'>Screen</span>
-          <span className='ProductCard__infoValue'>{item.screen}</span>
-        </article>
+        <section className='ProductCard__info'>
+          <article className='ProductCard__infoColumn'>
+            <span className='ProductCard__infoLabel'>Screen</span>
+            <span className='ProductCard__infoValue'>{item.screen}</span>
+          </article>
           <article className='ProductCard__infoColumn'>
             <span className='ProductCard__infoLabel'>Capacity</span>
             <span className='ProductCard__infoValue'>{item.capacity}</span>

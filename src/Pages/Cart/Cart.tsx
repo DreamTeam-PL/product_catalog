@@ -19,36 +19,38 @@ export const Cart = () => {
     }, 3000)
   }
 
-return (
-  <>
-    {successMessage && <SuccessMessage />}
-    {!successMessage && (
-      <main className='cart'>
-        <Button type='iconText'
-          icon='back' value='Back'
-          onClick = {() => navigate(-1)}
-        />;
-        <h1 className='cart__title'>{t('cart.title')}</h1>
-        <div className='cart__container'>
-          {cart.items.length === 0 && <p>The cart is empty!</p>}
-          {cart.items.length > 0 && (
-            <>
-              <ItemList items={cart.items} />
-              <section className='cart__checkout'>
-                <h2 className='cart__checkout-total'>{cart.totalCost}</h2>
-                <p className='cart__checkout-count'>
-                  {t('cart.totalForItems', {
-                    count: cart.totalCount,
-                  })}
-                </p>
-                <div className='cart__checkout-line' />
-                <Button type='color' value='Checkout' onClick={navigateTo} />
-              </section>
-            </>
-          )}
-        </div>
-      </main>
-    )}
-  </>
-)
+  return (
+    <>
+      {successMessage && <SuccessMessage />}
+      {!successMessage && (
+        <main className='cart'>
+          <Button
+            type='iconText'
+            icon='back'
+            value='Back'
+            onClick={() => navigate(-1)}
+          />
+          <h1 className='cart__title'>{t('cart.title')}</h1>
+          <div className='cart__container'>
+            {cart.items.length === 0 && <p>The cart is empty!</p>}
+            {cart.items.length > 0 && (
+              <>
+                <ItemList items={cart.items} />
+                <section className='cart__checkout'>
+                  <h2 className='cart__checkout-total'>{cart.totalCost}</h2>
+                  <p className='cart__checkout-count'>
+                    {t('cart.totalForItems', {
+                      count: cart.totalCount,
+                    })}
+                  </p>
+                  <div className='cart__checkout-line' />
+                  <Button type='color' value='Checkout' onClick={navigateTo} />
+                </section>
+              </>
+            )}
+          </div>
+        </main>
+      )}
+    </>
+  )
 }

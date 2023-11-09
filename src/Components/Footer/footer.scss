@@ -1,12 +1,7 @@
 .footer {
-  margin-top: 64px; 
   background: #FFF;
   box-shadow: 0px -1px 0px 0px #E2E6E9; 
   display: flex; 
-
-  @media(min-width: 1200px) {
-    margin-top: 80px;  
-  }
 
   &__wrapper { 
     display: flex;

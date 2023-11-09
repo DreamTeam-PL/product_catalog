@@ -275,6 +275,11 @@
       margin-top: 32px;
       text-decoration-line: strikethrough;
     }
+
+    .button-fav {
+      width: 48px;
+      height: 48px;
+    }
   }
 
   &-price-cta {
@@ -284,11 +289,9 @@
   }
 
   &-button {
-    color: #fff;
     width: 263px;
     height: 48px;
     display: inline-block;
-    background-color: #4219d0;
     border-radius: 48px;
     display: flex;
     justify-content: center;
@@ -300,6 +303,11 @@
     font-weight: 700;
     line-height: 21px;
     margin-right: 8px;
+
+    &--fav {
+      width: 48px;
+      height: 48px;
+    }
   }
 
   &-details {

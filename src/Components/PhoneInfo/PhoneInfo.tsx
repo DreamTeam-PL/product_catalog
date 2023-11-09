@@ -10,7 +10,6 @@ import { Link, useParams } from 'react-router-dom'
 import { PhoneDetails } from '../../types/types'
 import { Breadcrumbs } from '../Breadcrumbs/Breadcrumbs';
 
-
 export const PhoneInfo: React.FC = () => {
   const { productSlug } = useParams<{ productSlug: string }>()
   const [productData, setProductData] = useState<PhoneDetails | null>(null)
@@ -113,14 +112,14 @@ export const PhoneInfo: React.FC = () => {
           <section className='phones'>
             <div className='phones__left'>
               <div className='phones__left-photos'>
-                {productData.images.slice(1).map((image, index) => (
+                {productData.images.slice(1, 5).map((image, index) => (
                   <div
                     className='phones__left-photos-frame'
                     key={index}
                     onClick={() => changeSelectedImage(index + 1)}
                   >
                     <img
-                      className='phone__info-phone-photo phone__infophone-photo-small'
+                      className='phone__info-phone-photo phone__info-phone-photo-small'
                       src={`https://phone-api-l15u.onrender.com/${image}`}
                       alt={productData.name}
                     />
@@ -129,7 +128,7 @@ export const PhoneInfo: React.FC = () => {
               </div>
               <div className='phones__left-photo'>
                 <img
-                  className='phone-photo phone-photo-small'
+                  className='phone-photo phone-photo-large'
                   src={`https://phone-api-l15u.onrender.com/${productData.images[selectedImageIndex]}`}
                   alt={productData.name}
                 />
@@ -149,7 +148,7 @@ export const PhoneInfo: React.FC = () => {
                         to={`/phones/${slugWithoutColor}-${color}  `}
                         style={{ textDecoration: 'none' }}
                       >
-                        <Circle fill={colorMap[color] || '#000000'} />
+                        <Circle fill={colorMap[color] || '#000000'} />{' '}
                       </Link>
                     ))}
                   </div>
@@ -159,15 +158,21 @@ export const PhoneInfo: React.FC = () => {
                     Select capacity
                   </span>
                   <div className='phone__info-main-memory'>
-                    {productData.capacityAvailable.map((capacity, index) => (
-                      <Link
-                        key={index}
-                        to={`/phones/${slugWithoutCapacity}`}
-                        style={{ textDecoration: 'none' }}
-                      >
-                        <Capacity value={capacity} />
-                      </Link>
-                    ))}
+                    {productData.capacityAvailable.map((capacity, index) => {
+                      const parts = slugWithoutCapacity.split('-')
+                      parts[parts.length - 2] = capacity.toLowerCase()
+                      const newSlug = parts.join('-')
+
+                      return (
+                        <Link
+                          key={index}
+                          to={`/phones/${newSlug}`}
+                          style={{ textDecoration: 'none' }}
+                        >
+                          <Capacity value={capacity} />
+                        </Link>
+                      )
+                    })}
                   </div>
                 </div>
                 <div className='phone__info-main-price-container'>
@@ -297,8 +302,10 @@ export const PhoneInfo: React.FC = () => {
           </section>
         </div>
       </div>
-      <CardsWidget title="Newest" requestServer={ProductService.getRecommended}/>
-      </>
-
+      <CardsWidget
+        title='You may also like'
+        requestServer={() => ProductService.getRecommended(productData.id)}
+      />
+    </>
   )
 }

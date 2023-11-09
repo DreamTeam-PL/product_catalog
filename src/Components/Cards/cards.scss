@@ -1,43 +1,87 @@
-@import "../../Styles/mixins.scss";
+.cardsWidget {
+  box-sizing: border-box;
+  position: relative; 
+  width: 100%;
+  display: flex;
+  flex-direction: column; 
+  gap: 24px; 
+  padding: 0 0 0 16px;
+  margin: auto auto;
+  max-width: 1012px;  
 
-.hmm2 {
-  margin: 0 152px;
+  @media(min-width: 640px) {
+    padding: 0 0 0 24px;
+  }
 
-  @include for-desktop() {
-    & {
-      margin: 0 32px;
+  @media(min-width: 1200px) {
+    padding: 0 32px 0 32px;
+    max-width: 1200px;  
+  }
+
+  &__header { 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    box-sizing: border-box;  
+    padding-right: 16px; 
+
+    @media(min-width: 640px) { 
+      max-width: 1012px;
+    }
+  
+    @media(min-width: 1200px) {
+      max-width: 1200px;
     }
   }
-}
 
-.title {
-  font-family: Mont;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 41px;
-  letter-spacing: -0.32px;
-  margin: 0 0 24px 0;
+  &__title {  
+    flex: 1 1 auto;
+    color: #0F0F11;
+    font-family: 'Mont', Helvetica, sans-serif;    
+    font-size: 22px; 
+    font-weight: 800;
+    line-height: 140%; 
 
-  @include for-phone() {
-    & {
-      font-size: 22px;
+    @media(min-width: 640px) {
+      font-size: 32px;
       font-weight: 800;
-      line-height: 140%;
-      width: 136px;
+      line-height: 41px;
+      letter-spacing: -0.32px;
+    }
+
+  } 
+
+
+  &__products {  
+    box-sizing: border-box; 
+    overflow: hidden; 
+    max-width: 1012px;
+    
+    @media(min-width: 1200px) {
+      max-width: 1200px;
     }
   }
-}
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-
-  @include for-tablet() {
-    & {
-      grid-template-columns: repeat(4, 1fr);
-      overflow: hidden;
-    }
+  &__actions { 
+    display: flex;
+    gap: 16px;  
   }
-}
+
+  &__grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(8, 212px); 
+    gap: 16px;
+    transition: 'transform 1s linear';
+
+    @media(min-width: 640px) {
+      grid-template-columns: repeat(8, 237px); 
+    }
+
+    @media(min-width: 1200px) {
+      grid-template-columns: repeat(8, 272px); 
+    } 
+  }
+ 
+} 

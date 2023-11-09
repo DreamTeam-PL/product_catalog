@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import './breadcrumbs.scss'
 
-export const Breadcrumbs = () => {
+type Props = {
+  className?: string;
+};
+
+export const Breadcrumbs:React.FC<Props> = ({ className = ''}) => {
   const location = useLocation();
   const [icons, setIcons] = useState<string[]>([]);
   const [isLoading, setIsloadnig] = useState(true);
@@ -54,7 +58,7 @@ export const Breadcrumbs = () => {
   return (
     <>
       {isLoading || 
-      <div className="breadcrumb">
+      <div className={`breadcrumb ${className}`}>
         <Link to={'/home'} className="breadcrumb__link">
           <img
             className='breadcrumb__icon'

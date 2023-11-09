@@ -3,11 +3,12 @@ import { Circle } from './Circle'
 import './phoneinfo.scss'
 import { Capacity } from './Capacity'
 import { FavIcon } from './favicon'
-import { Cards } from '../Cards/Cards'
+import { CardsWidget } from '../Cards/Cards'
 import '../../Pages/Catalog/catalog.scss'
 import { ProductService } from '../../Api/Products'
 import { Link, useParams } from 'react-router-dom'
 import { PhoneDetails } from '../../types/types'
+
 
 export const PhoneInfo: React.FC = () => {
   const { productSlug } = useParams<{ productSlug: string }>()
@@ -319,7 +320,8 @@ export const PhoneInfo: React.FC = () => {
           </section>
         </div>
       </div>
-      <Cards type={'newest'} />
-    </>
+      <CardsWidget title="Newest" requestServer={ProductService.getRecommended}/>
+      </>
+
   )
 }

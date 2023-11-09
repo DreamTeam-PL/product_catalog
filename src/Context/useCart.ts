@@ -23,11 +23,11 @@ export const useCart = () => {
       includes: (itemId:number) => cart.items.some(item => item.id === itemId),
 
       increase: (itemId:number) => setCartItems(items => items
-        .map(item => item.id === itemId ? { ...item, quantity: (item.quantity || 0) + 1 } : item)), 
+        .map(item => item.id === itemId ? { ...item, quantity: (item.quantity || 1) + 1 } : item)), 
 
       decrease: (itemId:number) => cart.countOf(itemId) > 1 
         ? setCartItems(items => items
-          .map(item => item.id === itemId ? { ...item, quantity: (item.quantity || 0) - 1 } : item))
+          .map(item => item.id === itemId ? { ...item, quantity: (item.quantity || 1) - 1 } : item))
         : cart.remove(itemId),
   };
 

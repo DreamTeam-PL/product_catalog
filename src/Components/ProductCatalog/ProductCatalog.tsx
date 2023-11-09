@@ -30,7 +30,11 @@ export const ProductCatalog:React.FC<Props> = ({ products, filters = [] }) => {
         </section>
 
         <main className="product-catalog__grid">
-            {products.map(product => (<Card key={product.id} item={product} />))}
+            {products.map(product => (<Card
+                key={product.id} 
+                item={product}
+                className="product-catalog__card"
+            />))}
         </main>
     </section>);
 }

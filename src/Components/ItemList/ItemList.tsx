@@ -17,7 +17,7 @@ export const ItemList:React.FC<ItemListProps> = ({ items }) => {
             name={item.name}
             quantity={item.quantity || 1}
             price={item.price}
-            img=""
+            img={item.image}
             increase={() => cart.increase(item.id)}
             decrease={() => cart.decrease(item.id)}
             remove={() => cart.remove(item.id)}

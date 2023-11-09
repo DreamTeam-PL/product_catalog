@@ -28,17 +28,22 @@ export const Cart = () => {
           <Button type='iconText' icon='back' value='Back' />
           <h1 className='cart__title'>{t('cart.title')}</h1>
           <div className='cart__container'>
-            <ItemList items={cart.items} />
-            <section className='cart__checkout'>
-              <h2 className='cart__checkout-total'>{cart.totalCost}</h2>
-              <p className='cart__checkout-count'>
-                {t('cart.totalForItems', {
-                  count: cart.totalCount,
-                })}
-              </p>
-              <div className='cart__checkout-line' />
-              <Button type='color' value='Checkout' onClick={navigateTo} />
-            </section>
+            {cart.items.length === 0 && <p>The cart is empty!</p>}
+            {cart.items.length > 0 && (
+              <>
+                <ItemList items={cart.items} />
+                <section className='cart__checkout'>
+                  <h2 className='cart__checkout-total'>{cart.totalCost}</h2>
+                  <p className='cart__checkout-count'>
+                    {t('cart.totalForItems', {
+                      count: cart.totalCount,
+                    })}
+                  </p>
+                  <div className='cart__checkout-line' />
+                  <Button type='color' value='Checkout' onClick={navigateTo} />
+                </section>
+              </>
+            )}
           </div>
         </main>
       )}

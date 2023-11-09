@@ -6,7 +6,7 @@ import { FavIcon } from './favicon'
 import { Cards } from '../Cards/Cards'
 import '../../Pages/Catalog/catalog.scss'
 import { ProductService } from '../../Api/Products'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { PhoneDetails } from '../../types/types'
 
 export const PhoneInfo: React.FC = () => {
@@ -20,7 +20,7 @@ export const PhoneInfo: React.FC = () => {
     black: '#000000',
     silver: '#C0C0C0',
     midnightgreen: '#004953',
-    spacegray: '#4B0082',
+    spacegray: '#4B6382',
     white: '#FFFFFF',
     yellow: '#F4BA47',
     red: '#EB5757',
@@ -30,8 +30,42 @@ export const PhoneInfo: React.FC = () => {
     green: '#27AE60',
   }
 
+  const extractSlugWithoutColor = (productSlug: string) => {
+    const parts = productSlug.split('-')
+    if (parts.length > 1) {
+      parts.pop()
+      return parts.join('-')
+    } else {
+      return productSlug
+    }
+  }
+
+  const slugWithoutColor = productSlug
+    ? extractSlugWithoutColor(productSlug)
+    : 'white'
+
+  const extractSlugWithoutCapacity = (productSlug: string) => {
+    const parts = productSlug.split('-')
+
+    for (let i = parts.length - 1; i >= 0; i--) {
+      if (isNaN(Number(parts[i]))) {
+        break
+      }
+      parts.pop()
+    }
+
+    return parts.join('-')
+  }
+
+  const slugWithoutCapacity = productSlug
+    ? extractSlugWithoutCapacity(productSlug)
+    : '64GB'
+
   useEffect(() => {
     const fetchProductData = async () => {
+      if (productSlug === undefined) {
+        return
+      }
       try {
         if (productSlug) {
           const product = await ProductService.getPhoneById(productSlug)
@@ -132,7 +166,13 @@ export const PhoneInfo: React.FC = () => {
                   </span>
                   <div className='phone__info-main-circles'>
                     {productData.colorsAvailable.map((color, index) => (
-                      <Circle key={index} fill={colorMap[color] || '#000000'} />
+                      <Link
+                        key={index}
+                        to={`/phones/${slugWithoutColor}-${color}  `}
+                        style={{ textDecoration: 'none' }}
+                      >
+                        <Circle fill={colorMap[color] || '#000000'} />
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -142,7 +182,13 @@ export const PhoneInfo: React.FC = () => {
                   </span>
                   <div className='phone__info-main-memory'>
                     {productData.capacityAvailable.map((capacity, index) => (
-                      <Capacity key={index} value={capacity} />
+                      <Link
+                        key={index}
+                        to={`/phones/${slugWithoutCapacity}`}
+                        style={{ textDecoration: 'none' }}
+                      >
+                        <Capacity value={capacity} />
+                      </Link>
                     ))}
                   </div>
                 </div>

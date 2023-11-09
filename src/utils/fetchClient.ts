@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const BASE_URL = 'http://localhost';
+const BASE_URL = 'https://phone-api-l15u.onrender.com';
 
 // returns a promise resolved after a given delay
-export function wait(delay: number) {
+function wait(delay: number) {
   return new Promise((resolve) => {
     setTimeout(resolve, delay);
   });

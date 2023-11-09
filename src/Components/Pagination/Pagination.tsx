@@ -33,13 +33,21 @@ export const Pagination: React.FC<Props> = ({ totalAmount, itemsPerPage }) => {
     searchParams.set('page', (selected + 1).toString());
     navigate(currentPath + `?${searchParams.toString()}`);
   }
-  
+
+  const rangeDisplay = (pages: number, current: number): number => {
+    if (current === 1 || current === pages || current === pages - 1) {
+      return 3;
+    }
+
+    return 2;
+  }
+
   return (
     <ReactPaginate 
       pageCount={numberOfPages}
       onPageChange={changePage}
       forcePage={currentPage - 1}
-      pageRangeDisplayed={4}
+      pageRangeDisplayed={rangeDisplay(numberOfPages, currentPage)}
       marginPagesDisplayed={0}
       breakLabel={null}
       previousLabel={

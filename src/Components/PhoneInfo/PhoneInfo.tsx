@@ -7,6 +7,7 @@ import { CardsWidget } from '../Cards/Cards'
 import '../../Pages/Catalog/catalog.scss'
 import { ProductService } from '../../Api/Products'
 import { Link, useParams } from 'react-router-dom'
+
 import { PhoneDetails, Product } from '../../types/types'
 import { Breadcrumbs } from '../Breadcrumbs/Breadcrumbs';
 import { useStorageContext } from '../../Context/StorageContext'
@@ -22,7 +23,7 @@ export const PhoneInfo: React.FC = () => {
   const colorMap: { [key: string]: string } = {
     gold: '#FFD700',
     gray: '#808080',
-    black: '#000000',
+    black: '#000200',
     silver: '#C0C0C0',
     midnightgreen: '#004953',
     spacegray: '#4B6382',

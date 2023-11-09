@@ -32,4 +32,16 @@
         }
 
     }
+
+    &__card {
+        max-width: 287px;
+
+        @media(min-width: 768px) {
+            max-width: 230px;
+        }
+
+        @media(min-width: 1200px) {
+            max-width: 272px;
+        }
+    }
 }

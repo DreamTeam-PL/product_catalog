@@ -7,14 +7,27 @@ $gray-primary: #0F0F11;
     justify-content: flex-start;
 
     &__title { 
-        color: $gray-primary;
-        font-size: 48px;
-        font-style: normal;
-        font-weight: 800;
-        line-height: 56px;
-        letter-spacing: -0.48px;
-        margin: 56px 152px;
-        font-family: Mont;
+        box-sizing: border-box;
+        color: $gray-primary; 
+        font-family: 'Mont', Helvetica, sans-serif;
+        width: 100%;
+        padding: 24px 16px;
+        font-size: 32px; 
+        font-weight: 700;
+        line-height: 41px; 
+        letter-spacing: -0.32px;
+
+        @media(min-width: 640px) { 
+          padding: 32px 24px;
+          font-size: 48px;  
+          line-height: 56px;
+          letter-spacing: -0.48px;
+        }
+
+        @media(min-width: 1200px) { 
+          padding: 56px 32px; 
+          max-width: 1200px;
+        }
 
     } 
 

@@ -60,6 +60,12 @@
                 left: 50%;
                 transform: rotate(-90deg) translate(50%, -30%); 
             }
+
+            &:disabled {
+                &::before {
+                    content: url('./chevron-up-disabled.svg');  
+                }
+            }
         }
 
         &-chevron-right {
@@ -72,6 +78,12 @@
                 top: 50%;
                 left: 50%;
                 transform: rotate(90deg) translate(-50%, 50%); 
+            }
+
+            &:disabled {
+                &::before {
+                    content: url('./chevron-up-disabled.svg');  
+                }
             }
         }
 

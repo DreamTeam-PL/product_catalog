@@ -8,7 +8,7 @@ type getProductsOpts = {
     order?: string;
 };
 
-type ListResult = {
+export type ListResult = {
     count: number;
     currentPage: number;
     data: Product[];

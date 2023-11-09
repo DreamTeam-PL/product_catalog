@@ -3,8 +3,9 @@ import { Circle } from './Circle'
 import './phoneinfo.scss'
 import { Capacity } from './Capacity'
 import { FavIcon } from './favicon'
-import { Cards } from '../Cards/Cards'
+import { CardsWidget } from '../Cards/Cards'
 import '../../Pages/Catalog/catalog.scss'
+import { ProductService } from '../../Api/Products'
 
 export const PhoneInfo: React.FC = () => {
   return (
@@ -259,7 +260,7 @@ export const PhoneInfo: React.FC = () => {
       
       
       </div>
-      <Cards type={'newest'} />
+      <CardsWidget title="Newest" requestServer={ProductService.getRecommended}/>
 
       </>
   )

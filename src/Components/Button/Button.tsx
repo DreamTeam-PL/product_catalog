@@ -20,6 +20,7 @@ export const Button:React.FC<ButtonProps> = ({
     disabled = false,
 }) => {
     return (<button 
+        disabled={disabled}
         onClick={e => {
             if (onClick) {
                 e.preventDefault();

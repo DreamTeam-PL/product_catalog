@@ -1,3 +1,5 @@
+import { Button } from '../../Components/Button/Button'
+import { Card } from '../../Components/Card/Card'
 import { Pagination } from '../../Components/Pagination/Pagination'
 import './catalog.scss'
 import { Breadcrumbs } from '../../Components/Breadcrumbs/Breadcrumbs'

@@ -3,6 +3,7 @@ import './card.scss'
 import { useStorageContext } from '../../Context/StorageContext'
 import { Product } from '../../types/types'
 import { Button } from '../Button/Button'
+import { Link } from 'react-router-dom'
 
 type Props = {
   item: Product
@@ -37,36 +38,35 @@ export const Card: React.FC<Props> = ({ item, showDiscount = false, className = 
           <span className='ProductCard__infoLabel'>Screen</span>
           <span className='ProductCard__infoValue'>{item.screen}</span>
         </article>
+          <article className='ProductCard__infoColumn'>
+            <span className='ProductCard__infoLabel'>Capacity</span>
+            <span className='ProductCard__infoValue'>{item.capacity}</span>
+          </article>
 
-        <article className='ProductCard__infoColumn'>
-          <span className='ProductCard__infoLabel'>Capacity</span>
-          <span className='ProductCard__infoValue'>{item.capacity}</span>
-        </article>
+          <article className='ProductCard__infoColumn'>
+            <span className='ProductCard__infoLabel'>RAM</span>
+            <span className='ProductCard__infoValue'>{item.ram}</span>
+          </article>
+        </section>
+        <section className='ProductCard__actions'>
+          <Button
+            type={!cart.includes(item.id) ? 'color' : 'submited'}
+            value={!cart.includes(item.id) ? 'Add to cart' : 'Added to cart'}
+            className='ProductCard__submit'
+            onClick={() => !cart.includes(item.id) && cart.add(item)}
+          />
 
-        <article className='ProductCard__infoColumn'>
-          <span className='ProductCard__infoLabel'>RAM</span>
-          <span className='ProductCard__infoValue'>{item.ram}</span>
-        </article>
-      </section>
-
-      <section className='ProductCard__actions'>
-        <Button
-          type={!cart.includes(item.id) ? 'color' : 'submited'}
-          value={!cart.includes(item.id) ? 'Add to cart' : 'Added to cart'}
-          className='ProductCard__submit'
-          onClick={() => !cart.includes(item.id) && cart.add(item)}
-        />
-
-        <Button
-          type='circle'
-          icon={favourites.includes(item.id) ? 'is-fav' : 'get-fav'}
-          onClick={() =>
-            !favourites.includes(item.id)
-              ? favourites.add(item)
-              : favourites.remove(item.id)
-          }
-        />
-      </section>
+          <Button
+            type='circle'
+            icon={favourites.includes(item.id) ? 'is-fav' : 'get-fav'}
+            onClick={() =>
+              !favourites.includes(item.id)
+                ? favourites.add(item)
+                : favourites.remove(item.id)
+            }
+          />
+        </section>
+      </Link>
     </article>
   )
 }

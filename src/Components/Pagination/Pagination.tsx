@@ -14,6 +14,7 @@ export const Pagination: React.FC<Props> = ({ totalAmount, itemsPerPage }) => {
   const currentPath = location.pathname;
   const [searchParams] = useSearchParams();
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [displayRange, setDisplayRange] = useState<number>(3);
   const navigate = useNavigate();
   const numberOfPages = Math.ceil(totalAmount / itemsPerPage); 
   
@@ -30,12 +31,16 @@ export const Pagination: React.FC<Props> = ({ totalAmount, itemsPerPage }) => {
   const nextPageButtonDisable = currentPage === numberOfPages;
 
   const changePage = ({selected}: { selected: number }) => {
+    setDisplayRange(() => rangeDisplay(numberOfPages, currentPage));
+
+      console.log(rangeDisplay(numberOfPages, currentPage));
+
     searchParams.set('page', (selected + 1).toString());
     navigate(currentPath + `?${searchParams.toString()}`);
   }
 
   const rangeDisplay = (pages: number, current: number): number => {
-    if (current === 1 || current === pages || current === pages - 1) {
+    if (current === 2 || current === pages || current === pages - 1) {
       return 3;
     }
 
@@ -47,7 +52,7 @@ export const Pagination: React.FC<Props> = ({ totalAmount, itemsPerPage }) => {
       pageCount={numberOfPages}
       onPageChange={changePage}
       forcePage={currentPage - 1}
-      pageRangeDisplayed={rangeDisplay(numberOfPages, currentPage)}
+      pageRangeDisplayed={displayRange}
       marginPagesDisplayed={0}
       breakLabel={null}
       previousLabel={

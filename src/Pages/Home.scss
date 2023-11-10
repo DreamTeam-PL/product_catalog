@@ -1,66 +1,65 @@
-$gray-primary: #0F0F11;
+$gray-primary: #0f0f11;
 
-.landing { 
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
 
-    &__title { 
-        box-sizing: border-box;
-        color: $gray-primary; 
-        font-family: 'Mont', Helvetica, sans-serif;
-        width: 100%;
-        padding: 24px 16px;
-        font-size: 32px; 
-        font-weight: 700;
-        line-height: 41px; 
-        letter-spacing: -0.32px;
+  &__title {
+    box-sizing: border-box;
+    color: $gray-primary;
+    font-family: 'Mont', Helvetica, sans-serif;
+    width: 100%;
+    padding: 24px 16px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 41px;
+    letter-spacing: -0.32px;
 
-        @media(min-width: 640px) { 
-          padding: 32px 24px;
-          font-size: 48px;  
-          line-height: 56px;
-          letter-spacing: -0.48px;
-        }
+    @media (min-width: 640px) {
+      padding: 32px 24px;
+      font-size: 48px;
+      line-height: 56px;
+      letter-spacing: -0.48px;
+    }
 
-        @media(min-width: 1200px) { 
-          padding: 56px 32px; 
-          max-width: 1200px;
-        }
+    @media (min-width: 1200px) {
+      padding: 56px 32px;
+      max-width: 1200px;
+    }
+  }
 
-    } 
+  &__sub-title {
+    color: $gray-primary;
+    font-weight: 800;
+    font-size: 32px;
+    font-style: normal;
+    line-height: 41px;
+    letter-spacing: -0.32px;
+    margin: 0;
+    font-family: Mont;
 
-    &__sub-title {
-      color: $gray-primary;
-      font-weight: 800;
-      font-size: 32px;
-      font-style: normal;
-      line-height: 41px;
-      letter-spacing: -0.32px;
-      margin: 0;
-      font-family: Mont;
-
-      @media (max-width: 639px) {
-        & {
-          font-size: 22px;
-          line-height: 140%;
-        }
+    @media (max-width: 639px) {
+      & {
+        font-size: 22px;
+        line-height: 140%;
       }
     }
+  }
 }
 
-.main { 
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
 }
 
 .test {
-    background-color: white;
-    border: 1px solid white;
+  background-color: white;
+  border: 1px solid white;
 
-    &:last-child {
-        margin-bottom: 80px;
-    }
+  // &:last-child {
+  //   margin-bottom: 80px;
+  // }
 }

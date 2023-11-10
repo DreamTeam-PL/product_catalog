@@ -10,13 +10,19 @@ export const Home: React.FC = () => {
   const { t } = useTranslation()
 
   return (
-    <section className='content landing'>
+    <section className=' landing'>
       <h1 className='landing__title'>{t('home.welcome')}</h1>
       <main className='main'>
         <Slider />
-        <CardsWidget title="Brand new models" requestServer={ProductService.getNewest} />
+        <CardsWidget
+          title='Brand new models'
+          requestServer={ProductService.getNewest}
+        />
         <Categories />
-        <CardsWidget title='Hot prices' requestServer={ProductService.getDiscounted} />
+        <CardsWidget
+          title='Hot prices'
+          requestServer={ProductService.getDiscounted}
+        />
       </main>
     </section>
   )

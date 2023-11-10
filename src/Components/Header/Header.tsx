@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
 import { useTranslation } from 'react-i18next'
-import { useStorageContext } from '../../Context/StorageContext';
+import { useStorageContext } from '../../Context/StorageContext'
 
 export function Header() {
   const navigate = useNavigate()
@@ -13,7 +13,15 @@ export function Header() {
   const { t, i18n } = useTranslation()
   const location = useLocation()
   const currentPath = location.pathname
-  const { favourites, cart } = useStorageContext();
+  const { favourites, cart } = useStorageContext()
+
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem('selectedLanguage')
+    if (storedLanguage) {
+      setCurrentLanguage(storedLanguage)
+      i18n.changeLanguage(storedLanguage)
+    }
+  }, [i18n])
 
   const navigateTo = (path: string) => {
     navigate(path)
@@ -45,6 +53,7 @@ export function Header() {
   }
 
   const handleLanguageChange = (newLanguage: string) => {
+    localStorage.setItem('selectedLanguage', newLanguage)
     i18n.changeLanguage(newLanguage)
     setCurrentLanguage(newLanguage)
   }
@@ -119,10 +128,10 @@ export function Header() {
                 button__isActive: currentPath === '/favourites',
               })}
               onClick={() => navigateTo('/favourites')}
-            >{favourites.items.length !== 0 &&
-              <div className="button__count">
-                {favourites.items.length}
-              </div>}
+            >
+              {favourites.items.length !== 0 && (
+                <div className='button__count'>{favourites.items.length}</div>
+              )}
             </button>
 
             <button
@@ -131,10 +140,10 @@ export function Header() {
                 button__isActive: currentPath === '/cart',
               })}
               onClick={() => navigateTo('/cart')}
-            >{cart.items.length !== 0 &&
-              <div className="button__count">
-                {cart.items.length}
-              </div>}
+            >
+              {cart.items.length !== 0 && (
+                <div className='button__count'>{cart.items.length}</div>
+              )}
             </button>
           </div>
         </div>
@@ -264,22 +273,22 @@ export function Header() {
                 button__isActive: currentPath === '/favourites',
               })}
               onClick={() => navigateTo('/favourites')}
-            >{favourites.items.length !== 0 &&
-              <div className="button__count">
-                {favourites.items.length}
-              </div>}
+            >
+              {favourites.items.length !== 0 && (
+                <div className='button__count'>{favourites.items.length}</div>
+              )}
             </button>
-            
+
             <button
               title='buttonCart'
               className={classNames('button__cart', {
                 button__isActive: currentPath === '/cart',
               })}
               onClick={() => navigateTo('/cart')}
-            >{cart.items.length !== 0 &&
-              <div className="button__count">
-                {cart.items.length}
-              </div>}
+            >
+              {cart.items.length !== 0 && (
+                <div className='button__count'>{cart.items.length}</div>
+              )}
             </button>
           </div>
         </>

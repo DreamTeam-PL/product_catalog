@@ -22,6 +22,7 @@ export const Home: React.FC = () => {
         <CardsWidget
           title='Hot prices'
           requestServer={ProductService.getDiscounted}
+          showDiscount
         />
       </main>
     </section>
